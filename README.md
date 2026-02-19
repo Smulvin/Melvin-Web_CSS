@@ -1,5 +1,4 @@
 # Melvin-Web_CSS
-
 ## Dag 1: 18 - 2 - 2026 Introductie
 Ik moest gaan werken aan het Make-up gedeelte van CSS. Hier vallen onder andere shapes onder. Ik wilde hier dus mee gaan oefenen om vormen mee te maken. Dit kan ik namelijk later ook gebruiken voor mijn eigen website die ik gedurende de minor bij ga houden. Op die andere website wilde ik namelijk veel verschillende controllers doen, in tegenstelling tot de enkele controlle die ik had voor mijn persoonlijke website in de kick-off weken. Sommige van deze controllers hebben niet alleen de standaard vierkant en ronde vormen. Daarom wilde ik daar mee gaan oefenen tijdens deze opdracht. Ik had voor mezelf voorgenomen dat ik ik ging proberen om een gamecube controller te maken. Ik denk niet dat het er super goed uit gaat komen te zien, of uberhaupt af komt. Maar dan heb ik er wel mee geoefend.<br><br>
 
@@ -72,9 +71,11 @@ https://upload.wikimedia.org/wikipedia/commons/a/a5/GameCube_controller.png
 Tijdens de checkout hebben we even kort uitgelegd waar we aan hebben gewerkt en hoe de presentatie van morgen eruit komt te zien. Hierin waren we nog even wat dieper in gegaan op hsl en rgba. Hier had Sanne nog even een duidelijk voorbeeld van gegeven van wat het verschil is als je bijvoorbeeld een gradient gebruikt. Dit was goed om te zien. Morgen kunnen we nog even testen hoeveel we te vertellen hebben zodat we niet te kort of te lang aan het praten zijn. Zelf heb ik vandaag in ieder geval veel geleerd over clip-path: path en clip-path: shape. Samen met verschillende corner-shapes.
 
 ## Dag 2: 19 - 2 - 2026
-
 ### Presentaties
 Onze eigen presentatie vond ik vrij goed gaan, ik kon vrij goed vertellen over wat ik had gedaan en kon de code goed uitleggen. Ik had alleen wat moeite met de sneltoetsen op een macBook. Van de andere presentaties vond ik zelf die van de :has vrij interessant. Het lijkt me namelijk vrij handig om tijdens het CSS vak om heel goed te worden in selectors. Die van scoll-driven animations was ook interessant, want ik wil wel meer met animaties gaan werken. Maar die techniek gaat waarschijnlijk niet werken in het idee voor mijn website gedurende de minor.
 
 ### Eindopdracht
 Vandaag kregen we een kick-off over de eindopdracht van CSS. Hierin mag je kiezen welke opdracht je wilde doen. In eerste instantie wilde ik die van de rubrix cube doen. Het leek me namelijk leuk om te experieenteren met 3D objecten in CSS. Hiervoor moest ik eerst een wiskundig vraagstuk oplossen die Sanne gaf. Ik kreeg er eentje over 12 munten waarvan eentje zwaarder of lichter is en je hebt een weegschaal die je maar 3 keer mag gebruiken (volgens Sanne een van de moeilijkste vraagstukken). Na veel moeite was het gelukt om de vraag correct te beantwoorden, dus mocht ik de rubrix gaan doen. Na veel nadenken en kijken naar hoeveel tijd ik heb. Leek het me handiger om toch maar die van Silly Walk te gaan doen en daar een game thema aan te geven. Dan kan ik namelijk wel nog de 3D cursus doen en dat gebruiken voor mijn NES controller die ik uiteindelijk wil gaan maken. Die is namelijk het meeste een kubus, dus die zou nog wel moeten lukken. <br>
+
+### Checkout met Iris
+Tijdens de checkout heb ik mijn idee tot nu uitgelegd. Mijn idee tot nu is dat het een gameachtig karakter wordt waarbij je elk ledemaat los kan besturen. Uit de checkout kwam vooral dit waarschijnlijk gewoon een combinatie van divs en spans worden. Voor de rest weet ik nog niet zeker of ik echt letterlijk een game karakter na ga maken of het alleen gaat laten voelen als het een game is. Ik wil ieder geval dat je hem redelik kan besturen met WASD en pijltjes toetsen, maar dat je hem ook met de muis op kan pakken in een soort ragdoll modus. 
