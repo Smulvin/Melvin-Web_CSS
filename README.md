@@ -85,3 +85,13 @@ Deze week ben ik begonnen met CSS met het leren over MakeUp voor een website. Hi
 Voor mijn eigen opdracht wilde ik eerst de rubix kubus gaan maken om te oefenen met 3D objecten. Na het oplossen van het wiskunde probleem van Sanne en het onderzoek naar hoe ik zoiets zou kunnen maken met alleen CSS, viel me de moed een beetje in de schoenen. Vooral als ik keek naar hoeveel werkdagen ik nog maar had. Het leek me dus handiger om iets te kiezen wat meer realistisch was om af te krijgen en dat dan perfect af te ronden en dat ik er nog een beetje easter eggs en details aan toe kon voegen. Ik heb dus gekozen om de Silly Walk opdracht te gaan doen. Hierbij heb ik voor me gevoel meer vrijheid in hoe ik de opdracht vorm kan geven, wat ik fijn vind want dat geeft me meer motivatie om er aan te werken. Er zijn veel loop games waarin je met redelijk lastige controls vooruit moet proberen te komen, dit ziet er vaak klunzig uit. Dit leek me dus perfect om zoiets te proberen te gaan maken door middel van HTML en CSS. Het voorbeeld dat ik in mijn hoofd hiervoor had was Octodad, er staat een plaatje daarvan hieronder. Ik heb nog niet veel schetsen of dingen uitgewerkt, maar dat komt na/ tijdens de vakantie waarschijnlijk.
 
 <img src="Assets/README_imgs/octodad_inspiratie.webp">
+
+### Voortgangsgesprek week 1
+Nested divs
+Anchoring positions with transform difficulties, check online (or ask Sanne)
+Julia Miosenne, Make your CSS walk
+sibling index on MDN for the joints
+min max calculator 9elements
+
+perspective property, mostly around 800 - 1000px 
+Only works on direct children
