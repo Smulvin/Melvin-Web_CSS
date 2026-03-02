@@ -87,11 +87,5 @@ Voor mijn eigen opdracht wilde ik eerst de rubix kubus gaan maken om te oefenen 
 <img src="Assets/README_imgs/octodad_inspiratie.webp">
 
 ### Voortgangsgesprek week 1
-Nested divs
-Anchoring positions with transform difficulties, check online (or ask Sanne)
-Julia Miosenne, Make your CSS walk
-sibling index on MDN for the joints
-min max calculator 9elements
-
-perspective property, mostly around 800 - 1000px 
-Only works on direct children
+Ik had mijn voortgangsgesprek met Nils. Hij vond mijn idee van een soort OctoDad parody leuk en goed passen bij de opdracht. Hij gaf als tip om nested divs te gebruiken voor de armen en benen. Voor de rest had hij nog wat goede informatie over websites die ik misschien handig zou vinden. Zo andere het werk van Julia Miosenne. Maar ook een pagina op MDN voor sibling index voor de scharnieren in het lichaam. Daarbij gaf hij nog wat informatie voor responsiveness die ik wel handig vond. Dat was de minmax calculator van 9elements. Hierop kan je makkelijk en snel uitzoeken welke waardes je nodig hebt voor fonts als die je die goed responsive wil maken.<br><br>
+Ook had hij nog wat informatie gegeven over hoe je dingen 3D kan laten lijken. Hier gaf hij een voorbeeldje van in een codepen. Hij verteelde dat je voor de perspective property meestal rond de 800 tot 1000 pixels zou moeten zitten en dat het alleen werkt op direct children. Ik weet niet of ik dit nodig ga hebben voor mijn huidige opdracht, maar zal zeker in de toekomst helpen.
