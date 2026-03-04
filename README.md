@@ -89,3 +89,115 @@ Voor mijn eigen opdracht wilde ik eerst de rubix kubus gaan maken om te oefenen 
 ### Voortgangsgesprek week 1
 Ik had mijn voortgangsgesprek met Nils. Hij vond mijn idee van een soort OctoDad parody leuk en goed passen bij de opdracht. Hij gaf als tip om nested divs te gebruiken voor de armen en benen. Voor de rest had hij nog wat goede informatie over websites die ik misschien handig zou vinden. Zo andere het werk van Julia Miosenne. Maar ook een pagina op MDN voor sibling index voor de scharnieren in het lichaam. Daarbij gaf hij nog wat informatie voor responsiveness die ik wel handig vond. Dat was de minmax calculator van 9elements. Hierop kan je makkelijk en snel uitzoeken welke waardes je nodig hebt voor fonts als die je die goed responsive wil maken.<br><br>
 Ook had hij nog wat informatie gegeven over hoe je dingen 3D kan laten lijken. Hier gaf hij een voorbeeldje van in een codepen. Hij verteelde dat je voor de perspective property meestal rond de 800 tot 1000 pixels zou moeten zitten en dat het alleen werkt op direct children. Ik weet niet of ik dit nodig ga hebben voor mijn huidige opdracht, maar zal zeker in de toekomst helpen.
+
+### Dag 3: 4 - 3 - 2026
+Weekly Nerd van Nils - 1 uur
+HTML setup gemaakt - 0,5 uur
+Layout basics van Nils - 1 uur
+3D transforms van Sanne - 1 uur
+Met Nils praten over joints - 1 uur
+Inspiratie uit zijn codepen voor armen maken - 1,5 uur
+
+Vandaag begonnen we samen met de Weekly Nerd over Nils, deze duurde ongeveer een uur. Daarna had ik kort even tijd om een begin te maken aan mijn eindopdracht. Hier was ik vooral begonnem met het opzetten van mijn html. Ik wist dat ik nested divs moest gebruiken, maar ik kreeg al snel geen overzicht meer. Daarna had ik workshop over layout basics van Nils. Ik dacht in eerste instantie dat dit ging over de layout/ structuur van je HTML en CSS, maar het ging over flexboxes en grid. Hier had ik al aardig wat verstand van, maar ik heb wel nog even iets geleerd over de flex property, van welke 3 properties die combineert en hoe je elke van die kan beïnvloeden en wat ze doen. Direct daarna had ik een workshop van Sanne over 3D (transforms) Deze vond ik een stuk interessanter. Ik had nog nooit met 3D gewerkt dus alles hier was nieuw. Ik wilde namelijk 3D gebruiken voor 1 van mijn controllers voor mijn eindwebsite voor de minor, dus ik moet nog even kijken welke informatie uit deze workshop ik daar wel en niet voor kan gebruiken. Beide workshop duurde ongeveer een uur per stuk. Daarna was ik zelfstandig verder aan het gaan met mijn eigen website maar kwam al snel vast te zitten met de scharnieren voor divs. Nils heeft hier veel bij geholpen en heeft me geholpen wat meer overzicht te krijgen in mijn HTML en CSS code. Ik kan namelijk best goed een header gebruiken voor het hoofd en een footer voor de beter, dat gaat al veel helpen bij het overzicht in mijn HTML. Daarbij kan ik ook data-types gebruiken voor de verschillende onderdelen. Maar hij herinnerde mij er even aan dat er meerdere container elementen in HTML zijn die ik zou kunnen gebruiken ipv van alleen divs. Daarbij heeft hij ook veel geholpen met het maken van de scharnieren voor armen en benen. Hier kon ik daarna goed verder mee. Tijdens het gesprek was er een codepen gemaakt die hij had doorgestuurd.<br>
+https://codepen.io/enbee81/pen/KwgVxbo?editors=1100 <br>
+
+<img src="Assets/README_imgs/begin_lichaam.png">
+
+#### Oude HTML code
+```     
+Hele Lichaam 
+    <main>
+        Torso Lichaam 
+        <div>
+            BovenTorso
+            <div>
+                Shirt
+                <div>
+                    Stropdas
+                    <div></div>
+                </div>
+
+                Hoofd
+                <div></div>
+
+                Arm Links
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    <div>
+                                        Hand
+                                        <div>
+                                            LHand
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                Arm Rechts
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    <div>
+                                        Hand
+                                        <div>
+                                            RHand
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            OnderTorso
+            <div>
+                Been Links
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    <div>
+                                        <Voet
+                                        <div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                Been Rechts
+                <div>
+                    <div>
+                        <div>
+                            <div>
+                                <div>
+                                    <div>
+                                        Voet
+                                        <div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+```
+
+#### Daily Checkout met Naoufai
+Naoufai gaat een control panel maken in de vorm van een retro radio. Hij had nog niet veel gedaan qua functionaliteiten maar was vooral een beetje bezig geweest met styling zei hij. Het zag er wel al redelijk uit zoals in het plaatje dat hij als voorbeeld had. Hij had leuke ideeën voor muzieknoten die dan uit de radio kwamen. Dat bracht me op ideeën om bijvoorbeeld iets met bubbels te doen die je kan poppen. Voor de rest had we het nog even kort over mijn thema gehad dat ik misschien iets kan doen met een onderwater en bovenwater thema en dat het gezicht van het poppetje dan veranderd alsof hij in paniek is.

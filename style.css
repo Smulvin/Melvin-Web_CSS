@@ -1,0 +1,193 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} 
+
+:root {
+    --color-suit: #1d3761;
+    --color-suit-limbs: #204683;
+    --color-skin: #e9a825;
+
+    --arm-segment-width: 2em;
+    --arm-segment-height: 6em;
+
+    --torso-width: 10em;
+    --torso-height: 20em;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: lightblue;
+}
+
+/* Torso */
+main {
+    margin: auto;
+    background: var(--color-suit);
+    width: var(--torso-width);
+    height: var(--torso-height);
+    border-radius: 1em 1em 2em 2em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    /* Linker arm */
+    section:first-of-type {
+        >div {
+            transform: rotate(5deg);
+        }
+    }
+
+    /* Rechter arm */
+    section:nth-of-type(2) {
+        justify-self: end;
+        >div {
+            transform: rotate(-5deg);
+        }
+    }
+
+    /* Linker been */
+    section:nth-of-type(3) {
+        align-self: end;
+    }
+
+    /* Rechter been */
+    section:nth-of-type(4) {
+        justify-self: end;
+        align-self: end;
+    }
+    
+}
+
+/* Arm */
+section {
+    position: relative;
+
+    /* Alle segmenten */
+    div {
+        background: var(--color-suit-limbs);
+        border-radius: 999em;
+        transform-origin: calc(var(--arm-segment-width) / 2) calc(var(--arm-segment-height) / 2);
+        width: var(--arm-segment-width);
+        height: var(--arm-segment-height);
+    }
+
+    /* Eerste segment */
+    >div {
+        position: relative;
+
+        /* Alle volgende segmenten */
+        div {
+            position: absolute;
+            left: 0;
+            top: calc(100% - var(--arm-segment-width));
+        }
+    }
+
+    /* Hand */
+    div:not(:has(div)) {
+        background: var(--color-skin);
+        --arm-segment-height: 8em;
+    }
+}
+
+/* body {
+    width: 100vw;
+    height: 100vh;
+    background: seagreen;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+div {
+    width: 3em;
+    height: 3em;
+}
+
+Lichaam 
+main {
+    margin: auto;
+}
+
+ Torso
+main > div {
+    background: yellow;
+    width: 10em;
+    height: 15em;
+}
+
+BovenTorso 
+main > div > div:first-child {
+    background: red;
+    width: inherit;
+    height: 70%;
+}
+
+Hele LinkerArm 
+main > div > div:first-child > div:nth-child(3) {
+    background: var(--color-suit);
+    position: relative;
+    transform-origin: 50% 10%;
+}
+
+ Elk onderdeel van de linker arm 
+main > div > div:first-child > div:nth-child(3) div {
+    background: var(--color-suit);
+    width: 2em;
+    height: 6em;
+    position: relative;
+    transform-origin: 50% 10%;
+}
+
+Linker Hand 
+main > div > div:first-child > div:nth-child(3) div:not(:has(div)) {
+    background: var(--color-skin);
+    width: 1.5em;
+    aspect-ratio: 1/5;
+} */
+
+/* Hele RechterArm 
+main > div > div:first-child > div:nth-child(4) {
+    position: relative;
+    transform-origin: 50% 10%;
+}
+
+main > div > div:first-child > div:nth-child(4) div {
+    background: var(--color-suit);
+}
+
+/* Rechter Hand 
+main > div > div:first-child > div:nth-child(4) div:not(:has(div)) {
+    background: var(--color-skin);
+    height: 100px;
+    width: 20px;
+}
+
+/*  OnderTorso 
+main > div > div:nth-child(2) {
+}
+
+/* LinkerBeen 
+main > div > div:nth-child(2) > div:first-child {
+}
+
+/* LinkerBeen 
+main > div > div:nth-child(2) > div:first-child {
+}
+
+/* LinkerVoet 
+main > div > div:nth-child(2) > div:first-child div:not(:has(div)) {
+    background: var(--color-skin);
+}
+
+/* RechterBeen 
+main > div > div:nth-child(2) > div:last-child {
+}
+
+/* Rechtervoet 
+main > div > div:nth-child(2) > div:last-child div:not(:has(div)) {
+    background: var(--color-skin);
+} */
