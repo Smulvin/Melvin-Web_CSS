@@ -53,7 +53,7 @@ Omdat ik nu wat meer ervaring heb met clip-path: path en clip-path: shape, wilde
 ```
 
 <img src="Assets/README_imgs/Controller-shape-Figma.png">
-<img src="Assets/README_imgs/shapes">
+<img src="Assets/README_imgs/shapes.png">
 
 ### Interessante websites
 https://bennettfeely.com/clippy/
