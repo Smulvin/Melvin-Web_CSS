@@ -198,6 +198,107 @@ Hele Lichaam
 
     </main>
 ```
+#### Oude CSS
+```
+body {
+    width: 100vw;
+    height: 100vh;
+    background: seagreen;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+div {
+    width: 3em;
+    height: 3em;
+}
+
+/* Lichaam */
+main {
+    margin: auto;
+}
+
+/* Torso */
+main > div {
+    background: yellow;
+    width: 10em;
+    height: 15em;
+}
+
+/* BovenTorso */
+main > div > div:first-child {
+    background: red;
+    width: inherit;
+    height: 70%;
+}
+
+/* Hele LinkerArm */
+main > div > div:first-child > div:nth-child(3) {
+    background: var(--color-suit);
+    position: relative;
+    transform-origin: 50% 10%;
+}
+
+/* Elk onderdeel van de linker arm */
+main > div > div:first-child > div:nth-child(3) div {
+    background: var(--color-suit);
+    width: 2em;
+    height: 6em;
+    position: relative;
+    transform-origin: 50% 10%;
+}
+
+Linker Hand */
+main > div > div:first-child > div:nth-child(3) div:not(:has(div)) {
+    background: var(--color-skin);
+    width: 1.5em;
+    aspect-ratio: 1/5;
+} */
+
+/* Hele RechterArm */
+main > div > div:first-child > div:nth-child(4) {
+    position: relative;
+    transform-origin: 50% 10%;
+}
+
+main > div > div:first-child > div:nth-child(4) div {
+    background: var(--color-suit);
+}
+
+/* Rechter Hand */
+main > div > div:first-child > div:nth-child(4) div:not(:has(div)) {
+    background: var(--color-skin);
+    height: 100px;
+    width: 20px;
+}
+
+/*  OnderTorso */
+main > div > div:nth-child(2) {
+}
+
+/* LinkerBeen */
+main > div > div:nth-child(2) > div:first-child {
+}
+
+/* LinkerBeen */
+main > div > div:nth-child(2) > div:first-child {
+}
+
+/* LinkerVoet */
+main > div > div:nth-child(2) > div:first-child div:not(:has(div)) {
+    background: var(--color-skin);
+}
+
+/* RechterBeen */
+main > div > div:nth-child(2) > div:last-child {
+}
+
+/* Rechtervoet */
+main > div > div:nth-child(2) > div:last-child div:not(:has(div)) {
+    background: var(--color-skin);
+} 
+```
 
 #### Daily Checkout met Naoufai
 Naoufai gaat een control panel maken in de vorm van een retro radio. Hij had nog niet veel gedaan qua functionaliteiten maar was vooral een beetje bezig geweest met styling zei hij. Het zag er wel al redelijk uit zoals in het plaatje dat hij als voorbeeld had. Hij had leuke ideeën voor muzieknoten die dan uit de radio kwamen. Dat bracht me op ideeën om bijvoorbeeld iets met bubbels te doen die je kan poppen. Voor de rest had we het nog even kort over mijn thema gehad dat ik misschien iets kan doen met een onderwater en bovenwater thema en dat het gezicht van het poppetje dan veranderd alsof hij in paniek is.
