@@ -320,3 +320,6 @@ https://images.steamusercontent.com/ugc/468674753085237580/A99D5775804483659464E
 #### Bekeken websites
 https://chrome.dev/anchor-tool/<br>
 https://bennettfeely.com/clippy/<br>
+
+#### Daily Checkout met Diego
+Uit deze checkout kwam niet. De dingen waar ik nog aan moest beginnen, had ik nog niet echt geprobeerd, dus wist niet of ik daar vast mee zou lopen. We hebben het wel even gehad over de dingen waar hij mee vast liep. Hij kwam wel op een nieuwe idee dat hij zou gaan testen / proberen.
