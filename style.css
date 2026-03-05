@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "Wet Paint";
+    src:url("Assets/fonts/RubikWetPaint-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -8,18 +15,174 @@
     --color-suit: #1d3761;
     --color-suit-limbs: #204683;
     --color-skin: #e9a825;
+    --color-mustache: #f1b848;
+    --color-shirt: #42668b;
+    --color-tie: #853e37;
 
     --arm-segment-width: 2em;
     --arm-segment-height: 6em;
 
+    --head-width: 8em;
+    --head-height: 13em;
+    --mouth-max-height: 0em;
+    --eye-width: 3em;
+    --eye-height: 4.5em;
+
+
     --torso-width: 10em;
-    --torso-height: 20em;
+    --torso-height: 15em;
 }
 
 body {
     width: 100vw;
     height: 100vh;
     background: lightblue;
+    overflow: hidden;
+
+    >div {
+        margin: auto;
+    }
+}
+
+h1 {
+    font-family: "Wet Paint";
+    font-size: 6em;
+    rotate: -10deg;
+    color: rgb(8, 74, 172);
+    text-shadow: .1em .1em 0px #ff7708;
+}
+
+/* Hoofd */
+header {
+    position: relative;
+
+    >div:nth-of-type(1) {
+        background: var(--color-skin);
+        width: var(--head-width);
+        height: var(--head-height);
+        margin: auto;
+        clip-path: shape(
+            from 35% 5%,
+            curve to 65% 5% with 50% 3%,
+            curve to 90% 5% with 88% 0%,
+            curve to 94% 50% with 100% 34%,
+            line to 90% 60%,
+            curve to 85% 85% with 90% 80%,
+            line to 85% 100%,
+            curve to 15% 100% with 50% 100%,
+            line to 15% 85%,
+            curve to 10% 60% with 10% 80%,
+            line to 6% 50%,
+            curve to 10% 5% with 0% 34%,
+            curve to 35% 5% with 12% 0%
+        );
+    }
+
+    /* Mond */
+    >div:nth-of-type(2) {
+        background: #9f1414;
+        height: 3em;
+        max-height: var(--mouth-max-height);
+        border-top: 7px solid white;
+        border-bottom: 7px solid white;
+        border-radius: 0 0 50% 50%;
+        width: calc(var(--head-width) / 2);
+        position: absolute;
+        top: 68%;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: var(--mouth-max-height) 1s;
+    }
+
+    /* Snor */
+    >div:nth-of-type(3) {
+        background: var(--color-mustache);
+        width: calc(var(--head-width) * 1.8);
+        height: calc(var(--head-height) / 3);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        clip-path: shape(
+            from 40% 5%,
+            hline to 60%,
+            curve to 88% 10% with 80% 60%,
+            curve to 93% 10% with 90% 0%,
+            curve to 90% 90% with 100% 50%,
+            curve to 60% 80% with 75% 100%,
+            curve to 40% 80% with 50% 65%,
+            curve to 10% 90% with 25% 100%,
+            curve to 7% 10% with 0% 50%,
+            curve to 12% 10% with 10% 0%,
+            curve to 40% 5% with 20% 60%
+        );
+    }
+
+    /* Beide ogen */
+    >div:nth-of-type(4) {
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(var(--head-width) + 1em);
+        display: flex;
+        justify-content: space-between;
+        div {
+            background: white;
+            width: var(--eye-width);
+            height: var(--eye-height);
+            border-radius: 50%;
+
+            /* Pupillen */
+            &::before {
+                content: "";
+                background: black;
+                position: absolute;
+                border-radius: 50%;
+                width: calc(var(--eye-width) / 2);
+                height: calc(var(--eye-height) / 2);
+            }
+
+            /* Glans */
+            &::after {
+                content: "";
+                background: white;
+                position: absolute;
+                border-radius: 50%;
+                width: calc(var(--eye-width) / 4);
+                height: calc(var(--eye-height) / 4);
+            }
+        }
+
+        /* Linkeroog */
+        div:first-of-type {
+            /* Pupil */
+            &::before {
+                left: 10%;
+                top: 25%;
+            }
+            /* Glans */
+            &::after {
+                left: 18%;
+                top: 25%;
+            }
+        }
+
+        /* Rechteroog */
+        div:last-of-type {
+            /* Pupil */
+            &::before {
+                right: 10%;
+                top: 25%;
+            }
+            /* Glans */
+            &::after {
+                right: 10%;
+                top: 25%;
+            }
+        }
+
+    }
 }
 
 /* Torso */
@@ -28,7 +191,7 @@ main {
     background: var(--color-suit);
     width: var(--torso-width);
     height: var(--torso-height);
-    border-radius: 1em 1em 2em 2em;
+    border-radius: 1em 1em 0em 0em;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -58,10 +221,9 @@ main {
         justify-self: end;
         align-self: end;
     }
-    
 }
 
-/* Arm */
+/* Arms and legs */
 section {
     position: relative;
 
@@ -69,7 +231,7 @@ section {
     div {
         background: var(--color-suit-limbs);
         border-radius: 999em;
-        transform-origin: calc(var(--arm-segment-width) / 2) calc(var(--arm-segment-height) / 2);
+        transform-origin: calc(var(--arm-segment-width) / 2) calc(var(--arm-segment-width) / 2);
         width: var(--arm-segment-width);
         height: var(--arm-segment-height);
     }
@@ -81,7 +243,6 @@ section {
         /* Alle volgende segmenten */
         div {
             position: absolute;
-            left: 0;
             top: calc(100% - var(--arm-segment-width));
         }
     }
@@ -90,5 +251,105 @@ section {
     div:not(:has(div)) {
         background: var(--color-skin);
         --arm-segment-height: 8em;
+        --arm-segment-width: 2.5em;
+        clip-path: shape(
+            from 80% 10%,
+            curve to 90% 65% with 100% 50%,
+            curve to 90% 100% with 70% 80%,
+            curve to 0% 55% with 15% 80%,
+            curve to 20% 10% with 30% 30%,
+            curve to 50% 0% with 30% 0%,
+            curve to 80% 10% with 70% 0%
+        );
     }
+}
+
+/* Alleen de armen */
+main section {
+    z-index: 1;
+}
+
+/* Shirt */
+main > div:first-of-type {
+    background: var(--color-shirt);
+    width: calc(var(--torso-width) / 2);
+    height: calc(var(--torso-height) / 2);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
+
+main > div:nth-of-type(2) {
+    background: var(--color-tie);
+    width: calc(var(--torso-width) / 4);
+    height: calc(var(--torso-height) / 2);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Hulp van https://bennettfeely.com/clippy/ voor genereren van clip-path */
+    clip-path: polygon(0 0, 100% 0, 55% 20%, 100% 50%, 50% 100%, 0% 50%, 45% 20%);
+}
+
+/* Onderlichaam */
+footer {
+    background: var(--color-suit);
+    width: var(--torso-width);
+    height: calc(var(--torso-height) / 4);
+    border-radius: 0em 0em 2em 2em;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+
+    /* Beide benen */
+    section {
+        top: calc(var(--torso-height) / 3 - var(--arm-segment-width));
+        z-index: -1;
+
+        div {
+            animation: benen-zwaaien 4s ease-in-out infinite alternate;
+        }
+    }
+    section:nth-of-type(1) {
+        --rotate-start: 15deg;
+        --rotate-end: -5deg;
+        div {
+            animation-duration: 5s;
+        }
+    }
+
+    section:nth-of-type(3) {
+        --rotate-start: -10deg;
+        --rotate-end: 10deg;
+
+        div {
+            animation-duration: 6s;
+        }
+
+    }
+
+    section:nth-of-type(4) {
+        --rotate-start: -15deg;
+        --rotate-end: 5deg;
+        div {
+            animation-duration: 7s;
+        }
+    }
+}
+
+@keyframes benen-zwaaien {
+    from {
+        rotate: var(--rotate-start, 10deg);
+    }
+    to {
+        rotate: var(--rotate-end, -10deg);
+    }
+}
+
+/* Bij rechterhelft de hand en voeten spiegelen in vorm */
+:is(
+  footer section:is(:nth-of-type(3), :nth-of-type(4)),
+  main section:last-of-type
+) div:not(:has(div)) {
+  transform: scaleX(-1);
 }

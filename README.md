@@ -103,6 +103,10 @@ https://codepen.io/enbee81/pen/KwgVxbo?editors=1100 <br>
 
 <img src="Assets/README_imgs/begin_lichaam.png">
 
+<img src="Assets/README_imgs/eerste-setup-schets.jpg">
+<img src="Assets/README_imgs/nieuwe-setup-schets.jpg">
+
+
 #### Oude HTML code
 ```     
 Hele Lichaam 
@@ -302,3 +306,17 @@ main > div > div:nth-child(2) > div:last-child div:not(:has(div)) {
 
 #### Daily Checkout met Naoufai
 Naoufai gaat een control panel maken in de vorm van een retro radio. Hij had nog niet veel gedaan qua functionaliteiten maar was vooral een beetje bezig geweest met styling zei hij. Het zag er wel al redelijk uit zoals in het plaatje dat hij als voorbeeld had. Hij had leuke ideeën voor muzieknoten die dan uit de radio kwamen. Dat bracht me op ideeën om bijvoorbeeld iets met bubbels te doen die je kan poppen. Voor de rest had we het nog even kort over mijn thema gehad dat ik misschien iets kan doen met een onderwater en bovenwater thema en dat het gezicht van het poppetje dan veranderd alsof hij in paniek is.
+
+### Dag 4: 5 - 6 - 2026
+Vandaag begonnen met een gezamelijk gesprek waarin we andere CSS moesten bestuderen en kregen we vragen over specificity. Dat was best leuk, duurde ongeveer een uur. Daarna ben ik zelfstandig gaan werken tot mijn workshop. Tijdens het zelfstandig werken ben ik bezig geweest met het stylen van mijn poppetje. Zodat hij eruit komt te zien als het karakter dat ik na probeer te maken. Ik begon met zijn overhemd onder zijn pak en zijn stropdas. Voor beide onderdelen had ik gebruik gemaakt van een polygon generator. Ik moest alleen nog een beetje met de waardes spelen zodat het er goed uitzag en dat de stropdas dan niet buiten het pak zou vallen. Daarna ging ik bezig met de handen. Deze had ik in Figma weer eerst uitgetekend zodat ik makkelijker alle percentages kon bekijken voor de clip-path. Dit heb ik later ook gedaan voor de snor en het hoofd. Tijdens de workshop heb ik geleerd over anchor positioning. Dit zal ik vast wel eens kunnen gebruiken, maar misschien niet in het huidge project. De workshop duurde ongeveer een half uurtje en het zelfstandig werken daarvoor 2 uur. Ns de workshop ging ik verder met het stylen van mijn poppetje. Nu ging ik beginnen aan het hoofd. Hier moest ik eerst nog wat HTML voor schrijven, maar dat was niet veel. Daarna had ik van het hoofd en snor een clip-path gemaakt in Figma zodat ik die makkelijker kon maken in CSS. Dat hielp veel. Daarna ging ik bezig met de ogen. Tijdens de workshop vandaag kwam kort even ::before en ::after naar voren. Dit bracht me op ideeën om dat te gebruiken voor de ogen. Dat werkte goed! Ik ben zeer tevreden over het resultaat. Tussendoor had ik nog even met Nils gepraat over een mechanic die ik later wil gaan maken voor mijn thema. Dat het achtergrond water veranderd adhv de breedte van je scherm. Hier had hij alvast wat uitleg over gegeven omdat hij er morgen en volgende week niet is. Daarna had ik nog tijd over dus had ik alvast een begin gemaakt aan de animatie op de benen. Ik wilde ze niet gelijk hebben. Het is nog niet helemaal hoe ik het voor ogen had, maar voor nu is het goed genoeg. Als allerlaatste heb ik nog even een tekst met font toegevoegd zodat ik dat morgen bij het voortgangsgesprek kan laten zien. Het zelfstandig werken duurde 3 uur.
+
+<img src="Assets/README_imgs/hand-clip-path.png">
+<img src="Assets/README_imgs/clip-path-in-figma.png">
+<img src="Assets/README_imgs/lichaam-styling.png">
+
+#### Inspiratie afbeeldingen
+https://images.steamusercontent.com/ugc/468674753085237580/A99D5775804483659464E5E0615DD74216CDC168/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false
+
+#### Bekeken websites
+https://chrome.dev/anchor-tool/<br>
+https://bennettfeely.com/clippy/<br>
