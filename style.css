@@ -75,8 +75,20 @@ body {
         bottom: 0;
         left: 0;
         right: 0;
-        z-index: -2;
+        z-index: 4;
         height: clamp(0px, var(--water-level), 100vh);
+        opacity: 0.4;
+        clip-path: shape(
+            from 0% 5%,
+            curve to 20% 5% with 10% 0%,
+            curve to 40% 5% with 30% 10%,
+            curve to 60% 5% with 50% 0%,
+            curve to 80% 5% with 70% 10%,
+            curve to 100% 5% with 90% 0%,
+            line to 100% 100%,
+            line to 0% 100%,
+            line to 0% 5%
+        );
     }
 }
 
