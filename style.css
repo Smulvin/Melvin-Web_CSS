@@ -34,7 +34,7 @@
     --px-width: tan(atan2(var(--100vw), 1px));
 
     /* Range */
-    --min-width: 350;
+    --min-width: 550;
     --max-width: 1900;
     --range: calc(var(--max-width) - var(--min-width));
 
@@ -52,10 +52,13 @@
     --mouth-max-height: 0em;
     --eye-width: 3em;
     --eye-height: 4.5em;
-
-
+    --stress-transition-duration: 0.2s;
+    
     --torso-width: 10em;
     --torso-height: 15em;
+
+    --stress-level-1: 800px;
+
 }
 
 body {
@@ -124,13 +127,19 @@ header {
             curve to 10% 5% with 0% 34%,
             curve to 35% 5% with 12% 0%
         );
+        box-shadow: 0px 35px 139px 0px rgba(230,28,28,0.99) inset;
+        transition: var(--stress-transition-duration);
     }
 
     /* Mond */
     >div:nth-of-type(2) {
         background: #9f1414;
         height: 3em;
-        max-height: var(--mouth-max-height);
+        /* Bron: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/if */
+        max-height: if(
+                media(width > 800px): 3em;
+                else: 0;
+            );;
         border-top: 7px solid white;
         border-bottom: 7px solid white;
         border-radius: 0 0 50% 50%;
@@ -139,7 +148,7 @@ header {
         top: 68%;
         left: 50%;
         transform: translateX(-50%);
-        transition: var(--mouth-max-height) 1s;
+        transition: var(--stress-transition-duration);
     }
 
     /* Snor */
@@ -180,6 +189,13 @@ header {
             width: var(--eye-width);
             height: var(--eye-height);
             border-radius: 50%;
+            scale: if(
+                media(width > 800px): 1.2;
+                else: 1;
+            );
+            transition: var(--stress-transition-duration);
+
+            
 
             /* Pupillen */
             &::before {
@@ -206,12 +222,12 @@ header {
         div:first-of-type {
             /* Pupil */
             &::before {
-                left: 10%;
+                left: 30%;
                 top: 25%;
             }
             /* Glans */
             &::after {
-                left: 18%;
+                left: 55%;
                 top: 25%;
             }
         }
@@ -220,12 +236,12 @@ header {
         div:last-of-type {
             /* Pupil */
             &::before {
-                right: 10%;
+                right: 30%;
                 top: 25%;
             }
             /* Glans */
             &::after {
-                right: 10%;
+                right: 30%;
                 top: 25%;
             }
         }

@@ -333,5 +333,47 @@ Uit deze checkout kwam niet. De dingen waar ik nog aan moest beginnen, had ik no
 Deze week ben ik echt begonnen met het coderen van mijn eindopdracht. Ik was begonnen met op papier schetsen hoe de layout er ongeveer uit kwam te zien en kwam er toen achter hoeveel divs ik eigenlijk wel niet nodig zou hebben. Later had Nils me geholpen om een betere setup te gebruiken waarin ik ook andere container elementen gebruik zoals sections, de header en de footer. Dit bracht meteen veel meer overzicht in mijn code. Nils had ook geholpen met de joints van de divs in de arm. Dit hielp heel veel. Hierdoor kon ik de dag daarna meteen al aan de slag met de styling van mijn poppetje. Zo heb ik deze week ook de volledige styling van mijn poppetje zelf al af gekregen en heb ik de komende 2 weken nog de tijd voor animaties, easter eggs en typografie. Voor een paar onderdelen van de styling had ik clip-paths gebruikt, iets wat ik aan het begin van het CSS vak had geleerd. Ik merk dat ik daar al meer behendig in wordt. Ook heb ik nog een idee van hoe ik 2 thema's kan toevoegen aan mijn website. Ik heb hier kort met Nils al over gehad omdat ik een bepaalde formule nodig had, ik moet nog even kijken of het me lukt om dit te maken. Ik had tijdens een workshop hadden we het ook nog een keer over ::before en ::after gehad. Ik had hier wel al eerder van gehoord, maar begreep het nooit heel goed waardoor ik het nooit echt had gebruikt. Nu begrijp ik hem beter en had ik hem meteen ook gebruikt om de ogen van mijn poppetje te maken.
 
 ### Vrijdag 6 - 3 - 2026
-Water niveau, deels code van Nils en deels AI
-Voortgangsgesprek
+Vandaag heb ik ook nog even iets gedaan aan mijn CSS project. Ik ben begonnen aan het water niveau laten stijgen en dalen. Ik had eerst onderzoek gedaan op de website van Nils om te kijken naar het berekenen van de breedte van het scherm en dat te combineren aan de hoogte van het water level. Dit kreeg ik werkend, daarna heb ik AI gevraagd om er wat limieten op te zetten om ervoor te zorgen dat het water niveau niet pas op 100vh is bij 0px breedte. TOen ik op school kwam heb ik een clip-path geschreven voor de golven in het water en heb ik er een opacity op gezet en z-index verhoogt. Dan lijkt het namelijk echt alsof de octopus uit het water kwam. Vasilis raadde aan op mix-blend-mode te gebruiken, maar we waren het er allebei over eens dat opacity misschien een betere oplossing was. Daarna ben ik gaan kijken naar if(). Het duurde even voordat ik deze begreep en kon gebruiken voor bepaalde effecten op mijn website. Maar kreeg het al werkend voor de ogen en de mond van de octobpus zodra het water niveau een bepaalde vh had.
+
+#### Bekeken websites
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/if
+https://9elements.com/blog/speed-vs-duration-a-use-case-for-mixed-unit-division/
+
+#### Ai Hulp
+Propmt:
+Yeah you are messing things up. Since with that new code it didnt work. Could you try to still use the old code with atan tan formula. There just seems to be a slight error in some of the calculations. I believe the water level is max at 0px wide. But the screen will never get to that point. Plus the water level is already at 0vh when the screen is 900px wide. While most screens are wider than that. Think you can fix that using the following code?
+```
+:root {
+    --color-water: #2389da;
+    --color-sand: #ffd06f;
+
+    --100vw: 100vw;
+    --px-width: tan(atan2(var(--100vw), 1px));
+
+    /* limits */
+    --min-width: 350;
+    --max-width: 1500;
+    --range: 1150;
+
+    /* normalized progress 0→1 */
+    --progress: calc((var(--px-width) - var(--min-width)) / var(--range));
+
+    /* convert to vh */
+    --water-level: calc((1 - var(--progress)) * 100vh);
+}
+
+body::after {
+    content:"";
+    background: var(--color-water);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -2;
+
+    height: clamp(0vh, var(--water-level), 100vh);
+}
+```
+
+#### Voortgangsgesprek
+Tijdens het voortgangsgesprek heb ik mijn website laten zien en bijna alles was al goed. Het enige waar ik nog echt even naar moest kijken was mijn typografie. De font past wel al bij mijn website. Maar hij was nog niet sensationeel genoeg. Hier ga ik dus nog even naar kijken zodat ik hem beter kan maken. Voor nu is het idee om elke letter los te doen en er met ::before en ::after badeendjes van te maken die dobberen op het water niveau.
