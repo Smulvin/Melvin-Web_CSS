@@ -19,6 +19,31 @@
     --color-shirt: #42668b;
     --color-tie: #853e37;
 
+    --color-water: #2389da;
+    --color-sand: #ffd06f;
+    --100vw: 100vw;
+
+    /* Voor schermformaat berekenen en aanpassen heb ik eerst de code van Nils gebruikt op https://9elements.com/blog/speed-vs-duration-a-use-case-for-mixed-unit-division/
+    Dit werkte, maar zorgde er wel voor dat het water level pas 100vh heeft op een scherm van 0px breedte. Dus eigenlijk nooit. Daarom wilde ik een min en max toevoegen.
+    Daar heb ik AI om hulp bij gevraagd. Prompt:
+    Yeah you are messing things up. Since with that new code it didnt work. Could you try to still use the old code with atan tan formula. There just seems to be a slight 
+    error in some of the calculations. I believe the water level is max at 0px wide. But the screen will never get to that point. Plus the water level is already at 0vh 
+    when the screen is 900px wide. While most screens are wider than that. Think you can fix that using the following code?
+
+    /* viewport width as number */
+    --px-width: tan(atan2(var(--100vw), 1px));
+
+    /* Range */
+    --min-width: 350;
+    --max-width: 1900;
+    --range: calc(var(--max-width) - var(--min-width));
+
+    /* normalized width */
+    --scaled-width: calc((var(--px-width) - var(--min-width)) / var(--range));
+
+    /* convert to water height */
+    --water-level: calc((1 - var(--scaled-width)) * 100vh);
+
     --arm-segment-width: 2em;
     --arm-segment-height: 6em;
 
@@ -36,11 +61,22 @@
 body {
     width: 100vw;
     height: 100vh;
-    background: lightblue;
+    background: var(--color-sand);
     overflow: hidden;
 
     >div {
         margin: auto;
+    }
+
+    &::after {
+        content:"";
+        background: var(--color-water);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -2;
+        height: clamp(0px, var(--water-level), 100vh);
     }
 }
 
