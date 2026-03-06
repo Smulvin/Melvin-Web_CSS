@@ -1,5 +1,8 @@
 # Melvin-Web_CSS
-## Dag 1: 18 - 2 - 2026 Introductie
+
+## Week 1
+
+### Dag 1: 18 - 2 - 2026 Introductie
 Ik moest gaan werken aan het Make-up gedeelte van CSS. Hier vallen onder andere shapes onder. Ik wilde hier dus mee gaan oefenen om vormen mee te maken. Dit kan ik namelijk later ook gebruiken voor mijn eigen website die ik gedurende de minor bij ga houden. Op die andere website wilde ik namelijk veel verschillende controllers doen, in tegenstelling tot de enkele controlle die ik had voor mijn persoonlijke website in de kick-off weken. Sommige van deze controllers hebben niet alleen de standaard vierkant en ronde vormen. Daarom wilde ik daar mee gaan oefenen tijdens deze opdracht. Ik had voor mezelf voorgenomen dat ik ik ging proberen om een gamecube controller te maken. Ik denk niet dat het er super goed uit gaat komen te zien, of uberhaupt af komt. Maar dan heb ik er wel mee geoefend.<br><br>
 
 Ik was eerst gewoon een beetje documentatie aan het lezen en dingen aan het proberen. Maar kwam er niet echt uit, daarna ben ik eerst de dingen gaan namaken uit de voorbeeldwebsites die op DLO stonden. Door hier een beetje mee te spelen kreeg ik een beetje idee van hoe het werkte en kon ik er zelf mee gaan spelen. Ik was eerst begonnen met de controller. Ik probeerde hem eerst op te delen in stukken, beginnend met het midden gedeelte want die leek me het makkelijkst. Dit lukte redelijk, ik heb veel inspiratie van de vlag code gebruikt om deze te maken.
@@ -55,7 +58,7 @@ Omdat ik nu wat meer ervaring heb met clip-path: path en clip-path: shape, wilde
 <img src="Assets/README_imgs/Controller-shape-Figma.png">
 <img src="Assets/README_imgs/shapes.png">
 
-### Interessante websites
+#### Interessante websites
 https://bennettfeely.com/clippy/
 https://css-tricks.com/css-blob-recipes/
 https://css-shape.com/
@@ -63,24 +66,24 @@ https://css-generators.com/blob/
 https://developer.chrome.com/blog/css-shape?hl=nl
 https://frontendmasters.com/blog/understanding-css-corner-shape-and-the-power-of-the-superellipse/
 
-### Inspiratie / hulp
+#### Inspiratie / hulp
 https://cdn.prod.website-files.com/5b44edefca321a1e2d0c2aa6/5e5f3b54311da41f4689a476_Dimensions-Guide-Digital-Video-Game-Controllers-GameCube-Controller-Dimensions.svg
 https://upload.wikimedia.org/wikipedia/commons/a/a5/GameCube_controller.png
 
-### Checkout met Groepje + Sanne
+#### Checkout met Groepje + Sanne
 Tijdens de checkout hebben we even kort uitgelegd waar we aan hebben gewerkt en hoe de presentatie van morgen eruit komt te zien. Hierin waren we nog even wat dieper in gegaan op hsl en rgba. Hier had Sanne nog even een duidelijk voorbeeld van gegeven van wat het verschil is als je bijvoorbeeld een gradient gebruikt. Dit was goed om te zien. Morgen kunnen we nog even testen hoeveel we te vertellen hebben zodat we niet te kort of te lang aan het praten zijn. Zelf heb ik vandaag in ieder geval veel geleerd over clip-path: path en clip-path: shape. Samen met verschillende corner-shapes.
 
-## Dag 2: 19 - 2 - 2026
-### Presentaties
+### Dag 2: 19 - 2 - 2026
+#### Presentaties
 Onze eigen presentatie vond ik vrij goed gaan, ik kon vrij goed vertellen over wat ik had gedaan en kon de code goed uitleggen. Ik had alleen wat moeite met de sneltoetsen op een macBook. Van de andere presentaties vond ik zelf die van de :has vrij interessant. Het lijkt me namelijk vrij handig om tijdens het CSS vak om heel goed te worden in selectors. Die van scoll-driven animations was ook interessant, want ik wil wel meer met animaties gaan werken. Maar die techniek gaat waarschijnlijk niet werken in het idee voor mijn website gedurende de minor.
 
-### Eindopdracht
+#### Eindopdracht
 Vandaag kregen we een kick-off over de eindopdracht van CSS. Hierin mag je kiezen welke opdracht je wilde doen. In eerste instantie wilde ik die van de rubrix cube doen. Het leek me namelijk leuk om te experieenteren met 3D objecten in CSS. Hiervoor moest ik eerst een wiskundig vraagstuk oplossen die Sanne gaf. Ik kreeg er eentje over 12 munten waarvan eentje zwaarder of lichter is en je hebt een weegschaal die je maar 3 keer mag gebruiken (volgens Sanne een van de moeilijkste vraagstukken). Na veel moeite was het gelukt om de vraag correct te beantwoorden, dus mocht ik de rubrix gaan doen. Na veel nadenken en kijken naar hoeveel tijd ik heb. Leek het me handiger om toch maar die van Silly Walk te gaan doen en daar een game thema aan te geven. Dan kan ik namelijk wel nog de 3D cursus doen en dat gebruiken voor mijn NES controller die ik uiteindelijk wil gaan maken. Die is namelijk het meeste een kubus, dus die zou nog wel moeten lukken. <br>
 
-### Checkout met Iris
+#### Checkout met Iris
 Tijdens de checkout heb ik mijn idee tot nu uitgelegd. Mijn idee tot nu is dat het een gameachtig karakter wordt waarbij je elk ledemaat los kan besturen. Uit de checkout kwam vooral dit waarschijnlijk gewoon een combinatie van divs en spans worden. Voor de rest weet ik nog niet zeker of ik echt letterlijk een game karakter na ga maken of het alleen gaat laten voelen als het een game is. Ik wil ieder geval dat je hem redelik kan besturen met WASD en pijltjes toetsen, maar dat je hem ook met de muis op kan pakken in een soort ragdoll modus. 
 
-## Week 1 verslag
+### Week 1 verslag
 Deze week ben ik begonnen met CSS met het leren over MakeUp voor een website. Hierin heb ik zelf gefocust op het leren van vormen maken door middel van clip-path: shape() en verschillende corner-shapes. Dit vond ik een interessant onderwerp en kan ik zeker gaan gebruiken voor in de toekomst gaan gebruiken voor verschillende elementen en zelfs animaties aan toeveogen. Vooral voor het maken van mijn verschillende controllers gaat dit helpen. Een ander onderdeel wat ik interessant vond was het gedeelte over hsl. Want op die manier kan je veel mooiere, fellere kleuren creeëren en ziet het er vooral beter uit bij het maken van een gradiënt. Tijdens de presentatie vond ik vooral het stuk over :has interessant, want het lijkt me best handig en leuk om goed te worden in CSS selectors.<br><br>
 Voor mijn eigen opdracht wilde ik eerst de rubix kubus gaan maken om te oefenen met 3D objecten. Na het oplossen van het wiskunde probleem van Sanne en het onderzoek naar hoe ik zoiets zou kunnen maken met alleen CSS, viel me de moed een beetje in de schoenen. Vooral als ik keek naar hoeveel werkdagen ik nog maar had. Het leek me dus handiger om iets te kiezen wat meer realistisch was om af te krijgen en dat dan perfect af te ronden en dat ik er nog een beetje easter eggs en details aan toe kon voegen. Ik heb dus gekozen om de Silly Walk opdracht te gaan doen. Hierbij heb ik voor me gevoel meer vrijheid in hoe ik de opdracht vorm kan geven, wat ik fijn vind want dat geeft me meer motivatie om er aan te werken. Er zijn veel loop games waarin je met redelijk lastige controls vooruit moet proberen te komen, dit ziet er vaak klunzig uit. Dit leek me dus perfect om zoiets te proberen te gaan maken door middel van HTML en CSS. Het voorbeeld dat ik in mijn hoofd hiervoor had was Octodad, er staat een plaatje daarvan hieronder. Ik heb nog niet veel schetsen of dingen uitgewerkt, maar dat komt na/ tijdens de vakantie waarschijnlijk.
 
@@ -89,6 +92,8 @@ Voor mijn eigen opdracht wilde ik eerst de rubix kubus gaan maken om te oefenen 
 ### Voortgangsgesprek week 1
 Ik had mijn voortgangsgesprek met Nils. Hij vond mijn idee van een soort OctoDad parody leuk en goed passen bij de opdracht. Hij gaf als tip om nested divs te gebruiken voor de armen en benen. Voor de rest had hij nog wat goede informatie over websites die ik misschien handig zou vinden. Zo andere het werk van Julia Miosenne. Maar ook een pagina op MDN voor sibling index voor de scharnieren in het lichaam. Daarbij gaf hij nog wat informatie voor responsiveness die ik wel handig vond. Dat was de minmax calculator van 9elements. Hierop kan je makkelijk en snel uitzoeken welke waardes je nodig hebt voor fonts als die je die goed responsive wil maken.<br><br>
 Ook had hij nog wat informatie gegeven over hoe je dingen 3D kan laten lijken. Hier gaf hij een voorbeeldje van in een codepen. Hij verteelde dat je voor de perspective property meestal rond de 800 tot 1000 pixels zou moeten zitten en dat het alleen werkt op direct children. Ik weet niet of ik dit nodig ga hebben voor mijn huidige opdracht, maar zal zeker in de toekomst helpen.
+
+## Week 2
 
 ### Dag 3: 4 - 3 - 2026
 Weekly Nerd van Nils - 1 uur
@@ -323,3 +328,6 @@ https://bennettfeely.com/clippy/<br>
 
 #### Daily Checkout met Diego
 Uit deze checkout kwam niet. De dingen waar ik nog aan moest beginnen, had ik nog niet echt geprobeerd, dus wist niet of ik daar vast mee zou lopen. We hebben het wel even gehad over de dingen waar hij mee vast liep. Hij kwam wel op een nieuwe idee dat hij zou gaan testen / proberen.
+
+### Week 2 verslag
+Deze week ben ik echt begonnen met het coderen van mijn eindopdracht. Ik was begonnen met op papier schetsen hoe de layout er ongeveer uit kwam te zien en kwam er toen achter hoeveel divs ik eigenlijk wel niet nodig zou hebben. Later had Nils me geholpen om een betere setup te gebruiken waarin ik ook andere container elementen gebruik zoals sections, de header en de footer. Dit bracht meteen veel meer overzicht in mijn code. Nils had ook geholpen met de joints van de divs in de arm. Dit hielp heel veel. Hierdoor kon ik de dag daarna meteen al aan de slag met de styling van mijn poppetje. Zo heb ik deze week ook de volledige styling van mijn poppetje zelf al af gekregen en heb ik de komende 2 weken nog de tijd voor animaties, easter eggs en typografie. Voor een paar onderdelen van de styling had ik clip-paths gebruikt, iets wat ik aan het begin van het CSS vak had geleerd. Ik merk dat ik daar al meer behendig in wordt. Ook heb ik nog een idee van hoe ik 2 thema's kan toevoegen aan mijn website. Ik heb hier kort met Nils al over gehad omdat ik een bepaalde formule nodig had, ik moet nog even kijken of het me lukt om dit te maken.
