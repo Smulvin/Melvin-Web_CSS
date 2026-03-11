@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Wet Paint";
-    src:url("Assets/fonts/RubikWetPaint-Regular.ttf") format("truetype");
+    src: url("Assets/fonts/RubikWetPaint-Regular.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -9,7 +9,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-} 
+}
 
 :root {
     --color-suit: #1d3761;
@@ -53,7 +53,7 @@
     --eye-width: 3em;
     --eye-height: 4.5em;
     --stress-transition-duration: 0.2s;
-    
+
     --torso-width: 10em;
     --torso-height: 15em;
 
@@ -66,13 +66,16 @@ body {
     height: 100vh;
     background: var(--color-sand);
     overflow: hidden;
+    position: relative;
 
     >div {
         margin: auto;
+        animation: bodybob 5s ease-in-out infinite;
     }
 
+    /* Water */
     &::after {
-        content:"";
+        content: "";
         background: var(--color-water);
         position: absolute;
         bottom: 0;
@@ -81,26 +84,140 @@ body {
         z-index: 4;
         height: clamp(0px, var(--water-level), 100vh);
         opacity: 0.4;
-        clip-path: shape(
-            from 0% 5%,
-            curve to 20% 5% with 10% 0%,
-            curve to 40% 5% with 30% 10%,
-            curve to 60% 5% with 50% 0%,
-            curve to 80% 5% with 70% 10%,
-            curve to 100% 5% with 90% 0%,
-            line to 100% 100%,
-            line to 0% 100%,
-            line to 0% 5%
-        );
+        clip-path: shape(from 0% 5%,
+                curve to 20% 5% with 10% 0%,
+                curve to 40% 5% with 30% 10%,
+                curve to 60% 5% with 50% 0%,
+                curve to 80% 5% with 70% 10%,
+                curve to 100% 5% with 90% 0%,
+                line to 100% 100%,
+                line to 0% 100%,
+                line to 0% 5%);
     }
 }
 
-h1 {
+@keyframes bodybob {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Title */
+article {
+    display: flex;
+    position: absolute;
+    bottom: calc(var(--water-level) - 40px);
+    gap: 1em;
     font-family: "Wet Paint";
-    font-size: 6em;
-    rotate: -10deg;
+    font-size: 3em;
     color: rgb(8, 74, 172);
-    text-shadow: .1em .1em 0px #ff7708;
+    z-index: 7;
+    margin-left: 1em;
+
+    p {
+        text-align: center;
+        width: 1em;
+        height: 1em;
+        position: relative;
+        animation: duckbob 2s ease-in-out infinite;
+        padding-top: 10px;
+
+        &:nth-of-type(2n) {
+            animation-delay: 1s;
+        }
+
+        &:nth-of-type(3n) {
+            animation-delay: 0.5s;
+        }
+
+        /* Badeend Lichaam */
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: yellow;
+            z-index: -1;
+            scale: 2;
+
+            /* Bron voor clip-path vorm: https://www.shutterstock.com/shutterstock/photos/395200873/display_1500/stock-vector-rubber-duck-ducky-bath-toy-line-art-vector-icon-for-apps-and-websites-395200873.jpg */
+            clip-path: shape(from 68% 0%,
+                    curve to 46% 22% with 49% 5%,
+                    curve to 49% 38% with 44% 30%,
+                    curve to 36% 45% with 52% 41%,
+                    curve to 5% 38% with 21% 48%,
+                    curve to 22% 95% with 0% 60%,
+                    curve to 78% 95% with 50% 100%,
+                    curve to 87% 48% with 100% 70%,
+                    curve to 87% 38% with 80% 43%,
+                    curve to 90% 22% with 92% 30%,
+                    curve to 68% 0% with 87% 5%);
+        }
+
+        /* Badeend Snavel */
+        &::after {
+            content: "";
+            position: absolute;
+            top: -10px;
+            right: -49px;
+            background: orange;
+            transform: scaleX(-1);
+            z-index: 90;
+            width: 100%;
+            height: 50%;
+            clip-path: shape(from 10% 30%,
+                    curve to 75% 0% with 50% 30%,
+                    curve to 90% 100% with 80% 33% / 100% 66%,
+                    curve to 10% 30% with 25% 90%)
+        }
+    }
+
+    /* Badeend Ogen */
+    p span:first-of-type {
+        width: 6px;
+        height: 8px;
+        border-radius: 50%;
+        background: black;
+        z-index: 10;
+        position: absolute;
+        top: -8px;
+        right: 0px;
+    }
+
+    /* Top hat */
+    p:last-of-type span:last-of-type {
+        width: 30px;
+        height: 40px;
+        background: black;
+        position: absolute;
+        top: -55px;
+        transform: rotate(-30deg);
+        /* Gegenereert met https://www.corner-shape.com/ */
+        border-radius: 10% / 85%;
+        corner-shape: notch notch square square;
+    }
+}
+
+@keyframes duckbob {
+    0% {
+        transform: translateY(0) rotate(10deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(-10deg);
+
+    }
+
+    100% {
+        transform: translateY(0) rotate(10deg);
+    }
 }
 
 /* Hoofd */
@@ -112,22 +229,24 @@ header {
         width: var(--head-width);
         height: var(--head-height);
         margin: auto;
-        clip-path: shape(
-            from 35% 5%,
-            curve to 65% 5% with 50% 3%,
-            curve to 90% 5% with 88% 0%,
-            curve to 94% 50% with 100% 34%,
-            line to 90% 60%,
-            curve to 85% 85% with 90% 80%,
-            line to 85% 100%,
-            curve to 15% 100% with 50% 100%,
-            line to 15% 85%,
-            curve to 10% 60% with 10% 80%,
-            line to 6% 50%,
-            curve to 10% 5% with 0% 34%,
-            curve to 35% 5% with 12% 0%
-        );
-        box-shadow: 0px 35px 139px 0px rgba(230,28,28,0.99) inset;
+        clip-path: shape(from 35% 5%,
+                curve to 65% 5% with 50% 3%,
+                curve to 90% 5% with 88% 0%,
+                curve to 94% 50% with 100% 34%,
+                line to 90% 60%,
+                curve to 85% 85% with 90% 80%,
+                line to 85% 100%,
+                curve to 15% 100% with 50% 100%,
+                line to 15% 85%,
+                curve to 10% 60% with 10% 80%,
+                line to 6% 50%,
+                curve to 10% 5% with 0% 34%,
+                curve to 35% 5% with 12% 0%);
+        box-shadow: 0px 35px 139px 0px rgba(230, 28, 28, 0.99) inset;
+
+        box-shadow: if(media(width > 800px): 0px 35px 139px 0px rgba(230, 28, 28, 0.99) inset;
+                else: 0px 35px 139px 0px var(--color-skin) inset;
+            );
         transition: var(--stress-transition-duration);
     }
 
@@ -136,10 +255,9 @@ header {
         background: #9f1414;
         height: 3em;
         /* Bron: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/if */
-        max-height: if(
-                media(width > 800px): 3em;
+        max-height: if(media(width > 800px): 3em;
                 else: 0;
-            );;
+            );
         border-top: 7px solid white;
         border-bottom: 7px solid white;
         border-radius: 0 0 50% 50%;
@@ -160,19 +278,17 @@ header {
         top: 50%;
         left: 50%;
         transform: translateX(-50%);
-        clip-path: shape(
-            from 40% 5%,
-            hline to 60%,
-            curve to 88% 10% with 80% 60%,
-            curve to 93% 10% with 90% 0%,
-            curve to 90% 90% with 100% 50%,
-            curve to 60% 80% with 75% 100%,
-            curve to 40% 80% with 50% 65%,
-            curve to 10% 90% with 25% 100%,
-            curve to 7% 10% with 0% 50%,
-            curve to 12% 10% with 10% 0%,
-            curve to 40% 5% with 20% 60%
-        );
+        clip-path: shape(from 40% 5%,
+                hline to 60%,
+                curve to 88% 10% with 80% 60%,
+                curve to 93% 10% with 90% 0%,
+                curve to 90% 90% with 100% 50%,
+                curve to 60% 80% with 75% 100%,
+                curve to 40% 80% with 50% 65%,
+                curve to 10% 90% with 25% 100%,
+                curve to 7% 10% with 0% 50%,
+                curve to 12% 10% with 10% 0%,
+                curve to 40% 5% with 20% 60%);
     }
 
     /* Beide ogen */
@@ -184,18 +300,18 @@ header {
         width: calc(var(--head-width) + 1em);
         display: flex;
         justify-content: space-between;
+
         div {
             background: white;
             width: var(--eye-width);
             height: var(--eye-height);
             border-radius: 50%;
-            scale: if(
-                media(width > 800px): 1.2;
-                else: 1;
-            );
+            scale: if(media(width > 800px): 1.2;
+                    else: 1;
+                );
             transition: var(--stress-transition-duration);
 
-            
+
 
             /* Pupillen */
             &::before {
@@ -220,11 +336,13 @@ header {
 
         /* Linkeroog */
         div:first-of-type {
+
             /* Pupil */
             &::before {
                 left: 30%;
                 top: 25%;
             }
+
             /* Glans */
             &::after {
                 left: 55%;
@@ -234,11 +352,13 @@ header {
 
         /* Rechteroog */
         div:last-of-type {
+
             /* Pupil */
             &::before {
                 right: 30%;
                 top: 25%;
             }
+
             /* Glans */
             &::after {
                 right: 30%;
@@ -265,13 +385,22 @@ main {
         >div {
             transform: rotate(5deg);
         }
+
+        >div:first-child {
+            anchor-name: --left-shoulder-location;
+        }
     }
 
     /* Rechter arm */
     section:nth-of-type(2) {
         justify-self: end;
+
         >div {
             transform: rotate(-5deg);
+        }
+
+        >div:first-child {
+            anchor-name: --right-shoulder-location;
         }
     }
 
@@ -316,15 +445,14 @@ section {
         background: var(--color-skin);
         --arm-segment-height: 8em;
         --arm-segment-width: 2.5em;
-        clip-path: shape(
-            from 80% 10%,
-            curve to 90% 65% with 100% 50%,
-            curve to 90% 100% with 70% 80%,
-            curve to 0% 55% with 15% 80%,
-            curve to 20% 10% with 30% 30%,
-            curve to 50% 0% with 30% 0%,
-            curve to 80% 10% with 70% 0%
-        );
+        clip-path: shape(from 80% 10%,
+                curve to 90% 65% with 100% 50%,
+                curve to 90% 100% with 70% 80%,
+                curve to 0% 55% with 15% 80%,
+                curve to 20% 10% with 30% 30%,
+                curve to 50% 0% with 30% 0%,
+                curve to 80% 10% with 70% 0%
+                );
     }
 }
 
@@ -334,7 +462,7 @@ main section {
 }
 
 /* Shirt */
-main > div:first-of-type {
+main>div:first-of-type {
     background: var(--color-shirt);
     width: calc(var(--torso-width) / 2);
     height: calc(var(--torso-height) / 2);
@@ -344,7 +472,7 @@ main > div:first-of-type {
     clip-path: polygon(0 0, 50% 100%, 100% 0);
 }
 
-main > div:nth-of-type(2) {
+main>div:nth-of-type(2) {
     background: var(--color-tie);
     width: calc(var(--torso-width) / 4);
     height: calc(var(--torso-height) / 2);
@@ -365,20 +493,25 @@ footer {
     display: flex;
     justify-content: space-between;
 
-    /* Beide benen */
+    /* Alle benen */
     section {
         top: calc(var(--torso-height) / 3 - var(--arm-segment-width));
         z-index: -1;
+        --benen-animation-duration: if(media(width > 1400px): 0.2s;
+                else: 4s;
+            );
 
         div {
-            animation: benen-zwaaien 4s ease-in-out infinite alternate;
+            animation: benen-zwaaien var(--benen-animation-duration) ease-in-out infinite alternate;
         }
     }
+
     section:nth-of-type(1) {
         --rotate-start: 15deg;
         --rotate-end: -5deg;
+
         div {
-            animation-duration: 5s;
+            animation-duration: calc(var(--benen-animation-duration) * 1.2);
         }
     }
 
@@ -387,15 +520,16 @@ footer {
         --rotate-end: 10deg;
 
         div {
-            animation-duration: 6s;
+            animation-duration: calc(var(--benen-animation-duration) * 1.4);
         }
     }
 
     section:nth-of-type(4) {
         --rotate-start: -15deg;
         --rotate-end: 5deg;
+
         div {
-            animation-duration: 7s;
+            animation-duration: calc(var(--benen-animation-duration) * 1.6);
         }
     }
 }
@@ -404,15 +538,77 @@ footer {
     from {
         rotate: var(--rotate-start, 10deg);
     }
+
     to {
         rotate: var(--rotate-end, -10deg);
     }
 }
 
 /* Bij rechterhelft de hand en voeten spiegelen in vorm */
-:is(
-  footer section:is(:nth-of-type(3), :nth-of-type(4)),
-  main section:last-of-type
-) div:not(:has(div)) {
-  transform: scaleX(-1);
+:is(footer section:is(:nth-of-type(3), :nth-of-type(4)),
+    main section:last-of-type) div:not(:has(div)) {
+    transform: scaleX(-1);
+}
+
+
+
+
+
+
+/* Radio Buttons */
+nav {
+    position: absolute;
+    inset: 0;
+    
+    form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        height: 100%;
+
+        div {
+            display: grid;
+            grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+
+            input {
+                opacity: 0.2;
+                z-index: 9999999999;
+            }
+        }
+
+        /* Linker helft */
+        div:first-of-type input:checked {
+           anchor-name: --left-hand-location;
+        }
+        
+        /* Rechter helft */
+        div:last-of-type input:checked {
+           anchor-name: --right-hand-location;
+        }
+    }
+}
+
+/* Linker arm onzichtbaar element */
+aside:first-of-type {
+    position: fixed;
+    background: red;
+    opacity: .5;
+    z-index: 50;
+
+    left: anchor(--left-hand-location center);
+	top: anchor(--left-hand-location center);
+	right: anchor(--left-shoulder-location center);
+	bottom: anchor(--left-shoulder-location center);
+}
+
+/* Rechter arm onzichtbaar element */
+aside:last-of-type {
+    position: fixed;
+    background: red;
+    opacity: .5;
+    z-index: 50;
+
+    right: anchor(--right-hand-location center);
+	top: anchor(--right-hand-location center);
+	left: anchor(--right-shoulder-location center);
+	bottom: anchor(--right-shoulder-location center);
 }

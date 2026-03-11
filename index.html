@@ -7,17 +7,18 @@
     <link rel="stylesheet" href="style.css">
     <title>Melvin Silly Walk</title>
 </head>
-<!--
-Potentiele fonts
-
-https://fonts.google.com/specimen/Rubik+Wet+Paint?categoryFilters=Feeling:%2FExpressive%2FExcited
-https://fonts.google.com/specimen/Sunshiney?categoryFilters=Feeling:%2FExpressive%2FExcited
-https://fonts.google.com/specimen/Matemasie?categoryFilters=Feeling:%2FExpressive%2FChildlike
-
--->
+<!--Font: https://fonts.google.com/specimen/Rubik+Wet+Paint?categoryFilters=Feeling:%2FExpressive%2FExcited-->
 
 <body>
-    <h1>OctoDude</h1>
+    <article>
+        <p><span></span><span></span>O</p>
+        <p><span></span><span></span>c</p>
+        <p><span></span><span></span>t</p>
+        <p><span></span><span></span>o</p>
+        <p><span></span><span></span>D</p>
+        <p><span></span><span></span>a</p>
+        <p><span></span><span></span>d</p>
+    </article>
     <div>
         <header data-type="head-container">
             <div data-type="head-shape"></div>
@@ -134,6 +135,48 @@ https://fonts.google.com/specimen/Matemasie?categoryFilters=Feeling:%2FExpressiv
             </section>
         </footer>
     </div>
+
+    <nav>
+        <form>
+            <!-- left side -->
+            <div>
+                <input type="radio" name="left-side">
+                <input type="radio" name="left-side">
+                <input type="radio" name="left-side">
+                <input type="radio" name="left-side">
+                <input type="radio" name="left-side">
+                <input type="radio" name="left-side">
+                <input type="radio" name="left-side">
+                <input type="radio" name="left-side">
+                <input type="radio" name="left-side">
+            </div>
+            <!-- right side -->
+            <div>
+                <input type="radio" name="right-side">
+                <input type="radio" name="right-side">
+                <input type="radio" name="right-side">
+                <input type="radio" name="right-side">
+                <input type="radio" name="right-side">
+                <input type="radio" name="right-side">
+                <input type="radio" name="right-side">
+                <input type="radio" name="right-side">
+                <input type="radio" name="right-side">
+            </div>
+
+        </form>
+    </nav>
+    
+    <!-- Onzichtbare vierkant voor arm bewegingen  -->
+
+    <!-- Bronnen:
+    https://codepen.io/shooft/pres/QwWJbEX?editors=1100
+    https://frontendmasters.com/blog/how-to-get-the-width-height-of-any-element-in-only-css/
+    https://codepen.io/Melvin-Vermast/pen/wBzGgEV?editors=1100 
+    https://codepen.io/shooft/pres/QwWzzXB?editors=1100-->
+    <aside data-type="dynamic"
+        style="--from-x:33%; --from-y:40%; --to-x:50%; --to-y:60%;">
+    </aside>    
+    <aside data-type="right-side" from="--right-shoulder-location" to="--right-hand-location"></aside>
 </body>
 
 </html>

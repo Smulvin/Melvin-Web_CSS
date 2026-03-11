@@ -377,3 +377,24 @@ body::after {
 
 #### Voortgangsgesprek
 Tijdens het voortgangsgesprek heb ik mijn website laten zien en bijna alles was al goed. Het enige waar ik nog echt even naar moest kijken was mijn typografie. De font past wel al bij mijn website. Maar hij was nog niet sensationeel genoeg. Hier ga ik dus nog even naar kijken zodat ik hem beter kan maken. Voor nu is het idee om elke letter los te doen en er met ::before en ::after badeendjes van te maken die dobberen op het water niveau.
+
+## Week 3
+
+### Woensdag 11 - 3 - 2026
+Vandaag begonnen we met een uitleg over kleuren van Sanne van ongeveer een uurtje. Daarna ben ik de rest van de dag verder zelfstandig gaan werken. Ik begon met een if schrijven voor de kleur van het hoofd van de octopus. Hier had ik een box-shadow voor. De box-shadow had ik al, maar de if alleen nog niet, dit was dan dus ook wel snel klaar. Daarna ben ik verder gegaan met het maken van de typografie. Hiervoor had ik eerst in Figma een design gemaakt voor een badeend en voor een snavel. Hiervoor had ik een voorbeeld gebruikt van: https://www.shutterstock.com/shutterstock/photos/395200873/display_1500/stock-vector-rubber-duck-ducky-bath-toy-line-art-vector-icon-for-apps-and-websites-395200873.jpg. Hierdoor kon ik hem daarna makkelijker in CSS namaken. Het maken van de badeendjes ging redelijk gemakkelijk. Het enige wat me nog niet gelukt was was ze responsive maken, maar Sanne vertelde later dat het ook niet per se hoefde. Hier ben ik ongeveer 2 uur mee bezig geweest. Eerst had ik alleen een p met een ::before en een ::after voor het lichaam en had ik een span als child voor een eventuele hoed. Later heb ik nog een extra span toegevoegd voor een oog. Ik had ook nog een extra if nodig voor de benen van de octopus. Zodra het scherm dan te groot zou worden dat ook de benen droog komen te liggen, zouden ze enorm gaan spartelen. Dit was redelijk snel werkend omdat ik nu al wat meer ervaring met if() had. <br>
+Het laatste waar ik vandaag mee bezig was geweest waren de armen. Ik had een idee om radio buttons over het scherm heen te doen en dat de arm dan naar de locatie van de geklikte radio button zou gaan. Ik had dit aan Cyd voorgesteld, maar die verwees me al redelijk snel door naar Sanne. Sanne stelde voor om anchor positioning te gebruiken en had hier een snelle schets voor gemaakt en wat linkjes naar codepens gegeven. Hier kwam ik een klein eindje mee. Het lukte me om een anchor te maken, maar die werkte alleen op radio buttons die boven de schouder zaten. Alles daaronder zorgt er namelijk voor dat het anchor element een negatieve height krijgt en daardoor niet bestaat. Hier ben ik voor de rest van de dag niet uitgekomen.
+
+<img src="Assets/README_imgs/duck_shapes.png">
+<img src="Assets/README_imgs/typography_ducks.png">
+<img src="Assets/README_imgs/anchoring_start.png">
+
+#### Websites
+https://codepen.io/shooft/pres/QwWJbEX?editors=1100<br>
+https://frontendmasters.com/blog/how-to-get-the-width-height-of-any-element-in-only-css/<br>
+https://codepen.io/Melvin-Vermast/pen/wBzGgEV?editors=1100<br>
+https://codepen.io/shooft/pres/QwWzzXB?editors=1100<br>
+https://www.corner-shape.com/<br>
+
+#### Checkout met
+
+ 
