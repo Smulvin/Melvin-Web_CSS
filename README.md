@@ -395,6 +395,7 @@ https://codepen.io/Melvin-Vermast/pen/wBzGgEV?editors=1100<br>
 https://codepen.io/shooft/pres/QwWzzXB?editors=1100<br>
 https://www.corner-shape.com/<br>
 
-#### Checkout met
+#### Checkout met Luna Jay
+Ik had oorspronkelijk mijn checkout met Teun, maar hij was helpen bij minorenmarkt dus was ik gekoppeld aan Luna Jay. Ik heb haar laten zien wat ik vandaag had gedaan en waar ik tegenaan liep. Het probleem was heel specifiek dus was het lastig om samen tot een oplossing te komen. Ik kan haar wel een paar ideeën geven die ze meteen had opgeschreven. 
 
  
