@@ -58,6 +58,10 @@
     --torso-height: 15em;
 
     --stress-level-1: 800px;
+
+    --left-arm-rotation: 5deg;
+    --right-arm-rotation: -5deg;
+
 }
 
 body {
@@ -382,11 +386,8 @@ main {
     /* Linker arm */
     section:first-of-type {
         >div {
-            transform: rotate(5deg);
-        }
-
-        >div:first-child {
             anchor-name: --left-shoulder-location;
+            transform: rotate(var(--left-arm-rotation));
         }
     }
 
@@ -395,11 +396,8 @@ main {
         justify-self: end;
 
         >div {
-            transform: rotate(-5deg);
-        }
-
-        >div:first-child {
             anchor-name: --right-shoulder-location;
+            transform: rotate(var(--right-arm-rotation));
         }
     }
 
@@ -577,7 +575,6 @@ nav {
         /* Linker helft */
         div:first-of-type input:checked {
             anchor-name: --left-hand-location;
-
         }
 
         /* Rechter helft */
@@ -611,14 +608,6 @@ nav {
     initial-value: 0;
 }
 
-@property --angle-left {
-    syntax: "<angle>";
-    inherits: true;
-    initial-value: 0deg;
-}
-
-
-
 
 body {
     aside {
@@ -637,6 +626,8 @@ body {
         --w: calc(1/(1 - var(--_x)));
         --h: calc(1/(1 - var(--_y)));
         --l: hypot(var(--w), var(--h));
+                --left-arm-rotation: atan(calc(var(--h) / var(--w)) * 1deg);
+                --right-arm-rotation: calc(-atan(calc(var(--h) / var(--w))));
         /* element width with pythagoras */
         timeline-scope: --cx, --cy;
         animation: x linear, y linear;
@@ -668,12 +659,12 @@ body {
 
     /* Voor linker arm */
     aside:first-of-type {
-
+        --left-arm-rotation: atan(calc(var(--h) / var(--w)) * 1deg);
     }
 
     /* Voor rechter arm */
     aside:last-of-type {
-
+        --right-arm-rotation: atan(calc(var(--h) / var(--w)) * -1deg);
     }
 }
 
