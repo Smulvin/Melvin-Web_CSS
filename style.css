@@ -600,63 +600,93 @@ nav {
 }
 
 @property --w {
-		syntax: "<integer>";
-		inherits: true;
-		initial-value: 0; 
+    syntax: "<integer>";
+    inherits: true;
+    initial-value: 0;
 }
 
 @property --h {
-		syntax: "<integer>";
-		inherits: true;
-		initial-value: 0; 
+    syntax: "<integer>";
+    inherits: true;
+    initial-value: 0;
+}
+
+@property --angle-left {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0deg;
 }
 
 
 
-aside {
-    --from: attr(from type(<custom-ident>));
-    --to: attr(to type(<custom-ident>));
 
-    position: fixed;
+body {
+    aside {
+        --from: attr(from type(<custom-ident>));
+        --to: attr(to type(<custom-ident>));
 
-    z-index: 50;
-    background: blue;
-    opacity: 0.5;
+        position: fixed;
 
-    inset: min(anchor(var(--from) center), anchor(var(--to) center));
+        z-index: 50;
+        background: blue;
+        opacity: 0.5;
 
-    overflow: hidden;
-    --w:calc(1/(1 - var(--_x)));
-    --h:calc(1/(1 - var(--_y)));
-    --l:hypot(var(--w), var(--h)); /* element width with pythagoras */
-    timeline-scope: --cx,--cy;
-    animation: x linear,y linear;
-    animation-timeline: --cx,--cy;
-    animation-range: entry 100% exit 100%; 
+        inset: min(anchor(var(--from) center), anchor(var(--to) center));
 
-    &::before {
-        content:"";
-        position: absolute;
+        overflow: hidden;
+        --w: calc(1/(1 - var(--_x)));
+        --h: calc(1/(1 - var(--_y)));
+        --l: hypot(var(--w), var(--h));
+        /* element width with pythagoras */
+        timeline-scope: --cx, --cy;
+        animation: x linear, y linear;
+        animation-timeline: --cx, --cy;
+        animation-range: entry 100% exit 100%;
 
-        width: 1px;
-        aspect-ratio: 1;
-        view-timeline: --cx inline,--cy block;
+        &::before {
+            content: "";
+            position: absolute;
+
+            width: 1px;
+            aspect-ratio: 1;
+            view-timeline: --cx inline, --cy block;
+        }
+
+        &::after {
+            content: counter(w) "x" counter(h) "=" counter(l);
+            counter-reset: w var(--w) h var(--h) l var(--l);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #000;
+            color: #fff;
+            font-size: 23px;
+            font-weight: bold;
+            padding: .3em;
+        }
     }
 
-    &::after {
-        content: counter(w) "x" counter(h) "=" counter(l);
-        counter-reset: w var(--w) h var(--h) l var(--l);
-        position: absolute;
-        left: 0;
-        top: 0;
-        background: #000;
-        color: #fff;
-        font-size: 23px;
-        font-weight: bold;
-        padding: .3em;
+    /* Voor linker arm */
+    aside:first-of-type {
+
+    }
+
+    /* Voor rechter arm */
+    aside:last-of-type {
+
     }
 }
 
 
-@keyframes x {to{--_x:1}}
-@keyframes y {to{--_y:1}}
+
+@keyframes x {
+    to {
+        --_x: 1
+    }
+}
+
+@keyframes y {
+    to {
+        --_y: 1
+    }
+}

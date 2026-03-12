@@ -398,4 +398,12 @@ https://www.corner-shape.com/<br>
 #### Checkout met Luna Jay
 Ik had oorspronkelijk mijn checkout met Teun, maar hij was helpen bij minorenmarkt dus was ik gekoppeld aan Luna Jay. Ik heb haar laten zien wat ik vandaag had gedaan en waar ik tegenaan liep. Het probleem was heel specifiek dus was het lastig om samen tot een oplossing te komen. Ik kan haar wel een paar ideeën geven die ze meteen had opgeschreven. 
 
+### Donderdag 12 - 3 - 2026
+Vandaag ben ik eigenlijk alleen maar bezig geweest om de armen te regelen, ik ben eerst 2 uur bezig geweest om te fixen dat het aside element ook gevormd wordt zodra er een radio button onder de schouder wordt ingedrukt. Ik ook even getest met :hover in plaats van :checked, maar dat vond ik minder goed werken, het lijkt me leuker als je de armen los van elkaar kan positioneren. Na nog 2 uur aan proberen was met beetje hulp van Sanne ook eindelijk gelukt om de breedte en hoogte van het aside element te krijgen. Ik was vergeten om overflow: hidden toe te voegen. Wat ervoor zorgt dat het een scrollwritten animation wordt. Dus dat was een beetje balen want ben daar veel te lang mee bezig geweest om dat op te lossen. Om daarna de hypotenuse te berekenen ging vrij snel. Alleen daarna kwamen er weer problemen bij. Namelijk de hoek berekenen en die waarde gebruiken om de arm te draaien. Het probleem heeft waarschijnlijk te maken met dat de waardes niet goed gelezen kunnen worden of dat de hoek niet goed berekend wordt. Ik weet nog niet hoe ik dit ga oplossen.
+
+<img src="Assets/README_imgs/width_height_hypotenuse.png">
+
+#### Checkout met Jeppe
+Ik had vandaag een Checkout met Jeppe, hij een control panel met kaarten, hij liep nog een beetje vast met hoe hij zijn typografie beter/ sensationeel kon maken. We kwamen samen tot het idee om de tekst op de achtergrond afwisselend van elkaar in banen te laten bewegen. Voor mijn idee konden we niet echt verder komen met het probleem waar ik tegenaan liep.
+
  
