@@ -668,7 +668,14 @@ body {
     }
 }
 
+/* Draaien van de armen */
+body:has(nav div:first-of-type input:checked) {
+    --left-arm-rotation: calc(-atan(var(--h) / var(--w)));
+}
 
+body:has(nav div:last-of-type input:checked) {
+    --right-arm-rotation: calc(-atan(var(--h) / var(--w)));
+}
 
 @keyframes x {
     to {
