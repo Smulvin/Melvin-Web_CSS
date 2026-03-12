@@ -58,7 +58,6 @@
     --torso-height: 15em;
 
     --stress-level-1: 800px;
-
 }
 
 body {
@@ -451,8 +450,7 @@ section {
                 curve to 0% 55% with 15% 80%,
                 curve to 20% 10% with 30% 30%,
                 curve to 50% 0% with 30% 0%,
-                curve to 80% 10% with 70% 0%
-                );
+                curve to 80% 10% with 70% 0%);
     }
 }
 
@@ -559,7 +557,7 @@ footer {
 nav {
     position: absolute;
     inset: 0;
-    
+
     form {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -567,48 +565,98 @@ nav {
 
         div {
             display: grid;
-            grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+            grid-template: repeat(7, 1fr) / repeat(6, 1fr);
 
             input {
-                opacity: 0.2;
-                z-index: 9999999999;
+                opacity: 0;
+                z-index: 200;
+                aspect-ratio: 1;
             }
         }
 
         /* Linker helft */
         div:first-of-type input:checked {
-           anchor-name: --left-hand-location;
+            anchor-name: --left-hand-location;
+
         }
-        
+
         /* Rechter helft */
         div:last-of-type input:checked {
-           anchor-name: --right-hand-location;
+            anchor-name: --right-hand-location;
         }
     }
 }
 
-/* Linker arm onzichtbaar element */
-aside:first-of-type {
-    position: fixed;
-    background: red;
-    opacity: .5;
-    z-index: 50;
-
-    left: anchor(--left-hand-location center);
-	top: anchor(--left-hand-location center);
-	right: anchor(--left-shoulder-location center);
-	bottom: anchor(--left-shoulder-location center);
+@property --_x {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
 }
 
-/* Rechter arm onzichtbaar element */
-aside:last-of-type {
-    position: fixed;
-    background: red;
-    opacity: .5;
-    z-index: 50;
-
-    right: anchor(--right-hand-location center);
-	top: anchor(--right-hand-location center);
-	left: anchor(--right-shoulder-location center);
-	bottom: anchor(--right-shoulder-location center);
+@property --_y {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
 }
+
+@property --w {
+		syntax: "<integer>";
+		inherits: true;
+		initial-value: 0; 
+}
+
+@property --h {
+		syntax: "<integer>";
+		inherits: true;
+		initial-value: 0; 
+}
+
+
+
+aside {
+    --from: attr(from type(<custom-ident>));
+    --to: attr(to type(<custom-ident>));
+
+    position: fixed;
+
+    z-index: 50;
+    background: blue;
+    opacity: 0.5;
+
+    inset: min(anchor(var(--from) center), anchor(var(--to) center));
+
+    overflow: hidden;
+    --w:calc(1/(1 - var(--_x)));
+    --h:calc(1/(1 - var(--_y)));
+    --l:hypot(var(--w), var(--h)); /* element width with pythagoras */
+    timeline-scope: --cx,--cy;
+    animation: x linear,y linear;
+    animation-timeline: --cx,--cy;
+    animation-range: entry 100% exit 100%; 
+
+    &::before {
+        content:"";
+        position: absolute;
+
+        width: 1px;
+        aspect-ratio: 1;
+        view-timeline: --cx inline,--cy block;
+    }
+
+    &::after {
+        content: counter(w) "x" counter(h) "=" counter(l);
+        counter-reset: w var(--w) h var(--h) l var(--l);
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #000;
+        color: #fff;
+        font-size: 23px;
+        font-weight: bold;
+        padding: .3em;
+    }
+}
+
+
+@keyframes x {to{--_x:1}}
+@keyframes y {to{--_y:1}}
