@@ -381,7 +381,6 @@ main {
     border-radius: 1em 1em 0em 0em;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
 
     /* Linker arm */
     section:first-of-type {
@@ -546,11 +545,6 @@ footer {
     transform: scaleX(-1);
 }
 
-
-
-
-
-
 /* Radio Buttons */
 nav {
     position: absolute;
@@ -573,41 +567,80 @@ nav {
         }
 
         /* Linker helft */
-        div:first-of-type input:checked {
+        div:first-of-type input:hover {
             anchor-name: --left-hand-location;
         }
 
         /* Rechter helft */
-        div:last-of-type input:checked {
+        div:last-of-type input:hover {
             anchor-name: --right-hand-location;
         }
     }
 }
 
-@property --_x {
+/* Armen */
+@property --_x-left {
     syntax: "<number>";
     inherits: true;
     initial-value: 0;
 }
 
-@property --_y {
+@property --_y-left {
     syntax: "<number>";
     inherits: true;
     initial-value: 0;
 }
 
-@property --w {
+@property --w-left {
     syntax: "<integer>";
     inherits: true;
     initial-value: 0;
 }
 
-@property --h {
+@property --h-left {
     syntax: "<integer>";
     inherits: true;
     initial-value: 0;
 }
 
+@property --_x-right {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+}
+
+@property --_y-right {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+}
+
+@property --w-right {
+    syntax: "<integer>";
+    inherits: true;
+    initial-value: 0;
+}
+
+@property --h-right {
+    syntax: "<integer>";
+    inherits: true;
+    initial-value: 0;
+}
+
+html {
+    --w-left: calc(1/(1 - var(--_x-left)));
+    --h-left: calc(1/(1 - var(--_y-left)));
+    --l-left: hypot(var(--w-left), var(--h-left));
+
+    --w-right: calc(1/(1 - var(--_x-right)));
+    --h-right: calc(1/(1 - var(--_y-right)));
+    --l-right: hypot(var(--w-right), var(--h-right)); 
+
+    timeline-scope: --cx-left, --cy-left, --cx-right, --cy-right;
+    animation: x-left linear, y-left linear, x-right linear, y-right linear;
+    animation-timeline: --cx-left, --cy-left, --cx-right, --cy-right;
+    animation-range: entry 100% exit 100%;
+}
 
 body {
     aside {
@@ -617,74 +650,45 @@ body {
         position: fixed;
 
         z-index: 50;
-        background: blue;
-        opacity: 0.5;
+        /* background: blue;
+        opacity: 0.5; */
 
         inset: min(anchor(var(--from) center), anchor(var(--to) center));
 
-        overflow: hidden;
-        --w: calc(1/(1 - var(--_x)));
-        --h: calc(1/(1 - var(--_y)));
-        --l: hypot(var(--w), var(--h));
-                --left-arm-rotation: atan(calc(var(--h) / var(--w)) * 1deg);
-                --right-arm-rotation: calc(-atan(calc(var(--h) / var(--w))));
-        /* element width with pythagoras */
-        timeline-scope: --cx, --cy;
-        animation: x linear, y linear;
-        animation-timeline: --cx, --cy;
-        animation-range: entry 100% exit 100%;
+        overflow: hidden; 
 
         &::before {
             content: "";
             position: absolute;
-
             width: 1px;
             aspect-ratio: 1;
-            view-timeline: --cx inline, --cy block;
-        }
-
-        &::after {
-            content: counter(w) "x" counter(h) "=" counter(l);
-            counter-reset: w var(--w) h var(--h) l var(--l);
-            position: absolute;
-            left: 0;
-            top: 0;
-            background: #000;
-            color: #fff;
-            font-size: 23px;
-            font-weight: bold;
-            padding: .3em;
         }
     }
 
-    /* Voor linker arm */
-    aside:first-of-type {
-        --left-arm-rotation: atan(calc(var(--h) / var(--w)) * 1deg);
+    aside:first-of-type::before {
+        view-timeline: --cx-left inline, --cy-left block; 
     }
 
-    /* Voor rechter arm */
-    aside:last-of-type {
-        --right-arm-rotation: atan(calc(var(--h) / var(--w)) * -1deg);
+    aside:last-of-type::before {
+        view-timeline: --cx-right inline, --cy-right block;
     }
 }
 
 /* Draaien van de armen */
+/* Linkerarm */
 body:has(nav div:first-of-type input:checked) {
-    --left-arm-rotation: calc(-atan(var(--h) / var(--w)));
+    --left-arm-rotation: atan(var(--w-left) / var(--h-left));
+    transition: 0.2s;
 }
 
+/* Rechterarm  */
 body:has(nav div:last-of-type input:checked) {
-    --right-arm-rotation: calc(-atan(var(--h) / var(--w)));
+    --right-arm-rotation: calc(atan(var(--w-right) / var(--h-right)) * -1);
+    transition: 0.2s;
 }
 
-@keyframes x {
-    to {
-        --_x: 1
-    }
-}
+@keyframes x-left {to {--_x-left: 1}}
+@keyframes y-left {to {--_y-left: 1}}
 
-@keyframes y {
-    to {
-        --_y: 1
-    }
-}
+@keyframes x-right {to {--_x-right: 1}}
+@keyframes y-right {to {--_y-right: 1}}
