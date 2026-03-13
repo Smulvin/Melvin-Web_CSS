@@ -12,15 +12,20 @@
 }
 
 :root {
-    --color-suit: #1d3761;
-    --color-suit-limbs: #204683;
-    --color-skin: #e9a825;
-    --color-mustache: #f1b848;
-    --color-shirt: #42668b;
-    --color-tie: #853e37;
+    --color-suit: hsl(217, 54%, 25%);
+    --color-suit-limbs: hsl(217, 61%, 32%);
+    --color-skin: hsl(40, 82%, 53%);
+    --color-mustache: hsl(40, 86%, 61%);
+    --color-shirt: hsl(210, 36%, 40%);
+    --color-tie: hsl(5, 41%, 37%);
 
-    --color-water: #2389da;
-    --color-sand: #ffd06f;
+    --color-water: hsl(207, 72%, 50%);
+    --color-sand: hsl(40, 100%, 72%);
+
+    --color-text: hsl(216, 91%, 35%);
+    --color-duck: hsl(60, 100%, 50%);
+    --color-beak: hsl(39, 100%, 50%);
+
     --100vw: 100vw;
 
     /* Voor schermformaat berekenen en aanpassen heb ik eerst de code van Nils gebruikt op https://9elements.com/blog/speed-vs-duration-a-use-case-for-mixed-unit-division/
@@ -57,11 +62,8 @@
     --torso-width: 10em;
     --torso-height: 15em;
 
-    --stress-level-1: 800px;
-
     --left-arm-rotation: 5deg;
     --right-arm-rotation: -5deg;
-
 }
 
 body {
@@ -100,17 +102,9 @@ body {
 }
 
 @keyframes bodybob {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(20px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
+    0% { transform: translateY(0);}
+    50% { transform: translateY(20px);}
+    100% { transform: translateY(0);}
 }
 
 /* Title */
@@ -121,7 +115,7 @@ article {
     gap: 1em;
     font-family: "Wet Paint";
     font-size: 3em;
-    color: rgb(8, 74, 172);
+    color: var(--color-text);
     z-index: 7;
     margin-left: 1em;
 
@@ -146,9 +140,10 @@ article {
             content: "";
             position: absolute;
             inset: 0;
-            background: yellow;
             z-index: -1;
             scale: 2;
+            background: hsl(var(--hue), 100%, 50%);
+            /* animation: duckhue 5s linear infinite; */
 
             /* Bron voor clip-path vorm: https://www.shutterstock.com/shutterstock/photos/395200873/display_1500/stock-vector-rubber-duck-ducky-bath-toy-line-art-vector-icon-for-apps-and-websites-395200873.jpg */
             clip-path: shape(from 68% 0%,
@@ -170,7 +165,7 @@ article {
             position: absolute;
             top: -10px;
             right: -49px;
-            background: orange;
+            background: var(--color-beak);
             transform: scaleX(-1);
             z-index: 90;
             width: 100%;
@@ -209,19 +204,21 @@ article {
 }
 
 @keyframes duckbob {
-    0% {
-        transform: translateY(0) rotate(10deg);
-    }
-
-    50% {
-        transform: translateY(-10px) rotate(-10deg);
-
-    }
-
-    100% {
-        transform: translateY(0) rotate(10deg);
-    }
+    0% { transform: translateY(0) rotate(10deg);}
+    50% { transform: translateY(-10px) rotate(-10deg);}
+    100% { transform: translateY(0) rotate(10deg);}
 }
+
+@property --hue {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 60;
+}
+
+/* @keyframes duckhue {
+  from { --hue: 0; }
+  to { --hue: 360; }
+} */
 
 /* Hoofd */
 header {
@@ -314,8 +311,6 @@ header {
                 );
             transition: var(--stress-transition-duration);
 
-
-
             /* Pupillen */
             &::before {
                 content: "";
@@ -339,7 +334,6 @@ header {
 
         /* Linkeroog */
         div:first-of-type {
-
             /* Pupil */
             &::before {
                 left: 30%;
@@ -368,7 +362,6 @@ header {
                 top: 25%;
             }
         }
-
     }
 }
 
@@ -530,13 +523,8 @@ footer {
 }
 
 @keyframes benen-zwaaien {
-    from {
-        rotate: var(--rotate-start, 10deg);
-    }
-
-    to {
-        rotate: var(--rotate-end, -10deg);
-    }
+    from {rotate: var(--rotate-start, 10deg);}
+    to {rotate: var(--rotate-end, -10deg);}
 }
 
 /* Bij rechterhelft de hand en voeten spiegelen in vorm */
@@ -637,7 +625,11 @@ html {
     --l-right: hypot(var(--w-right), var(--h-right)); 
 
     timeline-scope: --cx-left, --cy-left, --cx-right, --cy-right;
-    animation: x-left linear, y-left linear, x-right linear, y-right linear;
+    animation: 
+        x-left linear, 
+        y-left linear, 
+        x-right linear, 
+        y-right linear;
     animation-timeline: --cx-left, --cy-left, --cx-right, --cy-right;
     animation-range: entry 100% exit 100%;
 }
@@ -646,7 +638,6 @@ body {
     aside {
         --from: attr(from type(<custom-ident>));
         --to: attr(to type(<custom-ident>));
-
         position: fixed;
 
         z-index: 50;
@@ -654,7 +645,6 @@ body {
         opacity: 0.5; */
 
         inset: min(anchor(var(--from) center), anchor(var(--to) center));
-
         overflow: hidden; 
 
         &::before {
@@ -689,6 +679,5 @@ body:has(nav div:last-of-type input:checked) {
 
 @keyframes x-left {to {--_x-left: 1}}
 @keyframes y-left {to {--_y-left: 1}}
-
 @keyframes x-right {to {--_x-right: 1}}
 @keyframes y-right {to {--_y-right: 1}}
