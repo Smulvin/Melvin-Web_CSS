@@ -380,6 +380,7 @@ main {
         >div {
             anchor-name: --left-shoulder-location;
             transform: rotate(var(--left-arm-rotation));
+            transition: 0.1s ease-out;
         }
     }
 
@@ -390,6 +391,7 @@ main {
         >div {
             anchor-name: --right-shoulder-location;
             transform: rotate(var(--right-arm-rotation));
+            transition: 0.1s ease-out;
         }
     }
 
@@ -539,6 +541,7 @@ nav {
     inset: 0;
 
     form {
+        margin-top: 10em;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         height: 100%;
@@ -546,21 +549,26 @@ nav {
         div {
             display: grid;
             grid-template: repeat(7, 1fr) / repeat(6, 1fr);
+            width: 50vw;
 
             input {
                 opacity: 0;
                 z-index: 200;
-                aspect-ratio: 1;
+
             }
         }
 
+        div:first-of-type input {
+            background: red;
+        }
+
         /* Linker helft */
-        div:first-of-type input:hover {
+        div:first-of-type input:checked {
             anchor-name: --left-hand-location;
         }
 
         /* Rechter helft */
-        div:last-of-type input:hover {
+        div:last-of-type input:checked {
             anchor-name: --right-hand-location;
         }
     }
@@ -616,8 +624,8 @@ nav {
 }
 
 html {
-    --w-left: calc(1/(1 - var(--_x-left)));
-    --h-left: calc(1/(1 - var(--_y-left)));
+    --w-left: calc(1/(max(0.001, 1 - var(--_x-left))));
+    --h-left: calc(1/(max(0.001, 1 - var(--_y-left))));
     --l-left: hypot(var(--w-left), var(--h-left));
 
     --w-right: calc(1/(1 - var(--_x-right)));
@@ -668,16 +676,14 @@ body {
 /* Linkerarm */
 body:has(nav div:first-of-type input:checked) {
     --left-arm-rotation: atan(var(--w-left) / var(--h-left));
-    transition: 0.2s;
 }
 
 /* Rechterarm  */
 body:has(nav div:last-of-type input:checked) {
     --right-arm-rotation: calc(atan(var(--w-right) / var(--h-right)) * -1);
-    transition: 0.2s;
 }
 
-@keyframes x-left {to {--_x-left: 1}}
-@keyframes y-left {to {--_y-left: 1}}
-@keyframes x-right {to {--_x-right: 1}}
-@keyframes y-right {to {--_y-right: 1}}
+@keyframes x-left {to {--_x-left: 0.999}}
+@keyframes y-left {to {--_y-left: 0.999}}
+@keyframes x-right {to {--_x-right: 0.999}}
+@keyframes y-right {to {--_y-right: 0.999}}
