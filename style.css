@@ -114,7 +114,7 @@ ul {
     width: 100%;
 
     overflow: hidden;  
-    z-index: 3;
+    z-index: 4;
 
     li {
         position: absolute;
@@ -126,7 +126,15 @@ ul {
         width: 50px;
         aspect-ratio: 1;
         background: white;
+        opacity:0.5;
         border-radius: 50%;
+
+        input {
+            width: 100%;
+            height: 100%;
+            accent-color: red;
+            z-index: 11;
+        }
     }
 
     li:nth-child(1) { left: 5%; }
@@ -603,7 +611,7 @@ nav {
 
             input {
                 opacity: 0;
-                z-index: 200;
+                z-index: 11;
             }
         }
 
@@ -693,8 +701,8 @@ body {
         --to: attr(to type(<custom-ident>));
         position: fixed;
 
-        z-index: 50;
-        /* background: blue;
+        /* z-index: 50;
+         background: blue;
         opacity: 0.5; */
 
         inset: min(anchor(var(--from) center), anchor(var(--to) center));

@@ -412,4 +412,7 @@ Deze week heb ik aan verschillende dingen gewerkt. Zo ben ik begonnen met het ve
 #### Voortgangsgesprek
 Tijdens het voortgangsgesprek had ik laten zien wat ik had, dit gaat al heel erg de goede kant op. Ik had alleen een dipje omdat het niet wilde lukken om de armen 100% goed te laten werken. Het prcoes om dit werkend te krijgen duurde langer dan veel andere onderdelen. Na het gesprek heb ik nog even met Sanne gezeten om het probleem op te lossen. Ik was er namelijk wel al achter dat het probleem waarschijnlijk ligt in de hierarchy. Bepaalde waardes die niet opgehaald konden worden omdat ze er niet bij konden. Sanne had hierbij geholpen en had ook nog even gekeken naar de atan formule. Ik had hoogte/breedte, maar het moest zijn breedte/hoogte. Een klein foutje waar weer veel moeite achter zat. Het was op school gelukt om 1 arm werkend te krijgen. Thuis ben ik bezig geweest om de andere arm ook werkend te krijgen door veel variabelen te dupliceren. En kon daarna ook andere dingen weer netter maken in de CSS.
 
- 
+ ### Weekend
+
+ ### 17 - 3 - 2026
+ Geprobeerd inputs te fixen, probleem met z-index. Weet niet of mogelijk is om checkboxes en radio buttons tegelijk werkend te krijgen
