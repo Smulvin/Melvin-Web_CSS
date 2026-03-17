@@ -156,14 +156,6 @@ ul {
     100% { transform: translate(10px, calc(-1 * var(--water-level))); opacity: 0;}
 }
 
-@keyframes pop {
-    0% { transform: scale(1); opacity: 1;}
-    50% { transform: scale(1.3);}
-    100% { transform: scale(0); opacity: 0;}
-}
-
-@keyframes reset {to { visibility: hidden;}}
-
 
 /* Title */
 article {
@@ -273,10 +265,10 @@ article {
   initial-value: 60;
 }
 
-/* @keyframes duckhue {
+@keyframes duckhue {
   from { --hue: 0; }
   to { --hue: 360; }
-} */
+}
 
 /* Hoofd */
 header {
@@ -612,12 +604,7 @@ nav {
             input {
                 opacity: 0;
                 z-index: 200;
-
             }
-        }
-
-        div:first-of-type input {
-            background: red;
         }
 
         /* Linker helft */
@@ -711,7 +698,7 @@ body {
         opacity: 0.5; */
 
         inset: min(anchor(var(--from) center), anchor(var(--to) center));
-        overflow: hidden; 
+        overflow: hidden;
 
         &::before {
             content: "";
