@@ -26,6 +26,13 @@
     --color-duck: hsl(60, 100%, 50%);
     --color-beak: hsl(39, 100%, 50%);
 
+    --color-plant: hsl(120, 100%, 25%);
+    --color-plant-dark: hsl(120, 86%, 20%);
+    --color-plant-light: hsl(120, 74%, 41%);
+    --color-plant-brown: hsl(30, 100%, 25%);
+    --color-plant-brown-dark: hsl(30, 86%, 20%);
+    --color-plant-brown-light: hsl(30, 74%, 41%);
+
     --100vw: 100vw;
 
     /* Voor schermformaat berekenen en aanpassen heb ik eerst de code van Nils gebruikt op https://9elements.com/blog/speed-vs-duration-a-use-case-for-mixed-unit-division/
@@ -51,6 +58,10 @@
 
     --arm-segment-width: 2em;
     --arm-segment-height: 6em;
+
+    --arm-floppy-delay: 0.16s;
+    --arm-floppiness: 8deg;
+    --arm-animation-duration: 0.6s;
 
     --head-width: 8em;
     --head-height: 13em;
@@ -128,13 +139,6 @@ ul {
         background: white;
         opacity:0.5;
         border-radius: 50%;
-
-        input {
-            width: 100%;
-            height: 100%;
-            accent-color: red;
-            z-index: 11;
-        }
     }
 
     li:nth-child(1) { left: 5%; }
@@ -228,10 +232,11 @@ article {
             z-index: 90;
             width: 100%;
             height: 50%;
-            clip-path: shape(from 10% 30%,
-                    curve to 75% 0% with 50% 30%,
-                    curve to 90% 100% with 80% 33% / 100% 66%,
-                    curve to 10% 30% with 25% 90%)
+            clip-path: shape(
+                from 10% 30%,
+                curve to 75% 0% with 50% 30%,
+                curve to 90% 100% with 80% 33% / 100% 66%,
+                curve to 10% 30% with 25% 90%);
         }
     }
 
@@ -278,6 +283,99 @@ article {
   to { --hue: 360; }
 }
 
+/* Plant */
+ol {
+    --plant-width: 2em;
+    --leaf-width: 6em;
+    --leaf-height: 3em;
+    position: absolute;
+    left: 10%;
+    bottom: 0;
+    /* Gegenereerd op https://cssgradient.io/ */
+    /* Hulp van Sanne bij het corret berekenen van de hoogte van de gradient */
+    background: linear-gradient(180deg,var(--color-plant-brown) calc(-16% + 111% * var(--scaled-width)), var(--color-plant) calc(-6% + 111% * var(--scaled-width)));
+
+    width: var(--plant-width);
+    border-radius: 1em 1em 0 0;
+    height: 90vh;
+
+    li {
+        list-style: none;
+        width: var(--leaf-width);
+        height: var(--leaf-height);
+        background: var(--color-plant-light);
+        transform: translateX(calc(var(--plant-width)));
+        margin: 1em auto;
+        transition: 0.2s;
+
+        /* Voorbeeld voor vorm: https://thumbs.dreamstime.com/b/artboard-up-dreamstime-390810912.jpg?w=768 */
+        clip-path: shape(
+            from 0% 15%,
+            curve to 100% 100% with 75% 0% / 85% 30%,
+            curve to 0% 15% with 60% 85% / 25% 60%);
+
+        
+
+        &::after {
+            content: "";
+            position: absolute;
+            background: var(--color-plant-dark);
+            height: 100%;
+            width: 100%;
+            clip-path: shape(
+                from 0% 0%,
+                curve to 100% 100% with 40% 10% / 72% 40%,
+                curve to 0% 8% with 70% 45% / 39% 17%,
+                line to 0% 0%);
+        }
+    }
+
+    /* De bladeren groen maken, ik hoorde van Sanne dat het ook met sibling-index kon, maar snapte die niet */
+    li:nth-of-type(1){background: if(media(width > 720px): var(--color-plant-brown-light); else: var(--color-plant-light));
+        &::after {background: if(media(width > 720px): var(--color-plant-brown-dark); else: var(--color-plant-dark));}
+    }
+    li:nth-of-type(2){background: if(media(width > 830px): var(--color-plant-brown-light); else: var(--color-plant-light));
+        &::after {background: if(media(width > 720px): var(--color-plant-brown-dark); else: var(--color-plant-dark));}
+    }
+    li:nth-of-type(3){background: if(media(width > 940px): var(--color-plant-brown-light); else: var(--color-plant-light));
+        &::after {background: if(media(width > 720px): var(--color-plant-brown-dark); else: var(--color-plant-dark));}
+    }
+    li:nth-of-type(4){background: if(media(width > 1020px): var(--color-plant-brown-light); else: var(--color-plant-light));
+        &::after {background: if(media(width > 720px): var(--color-plant-brown-dark); else: var(--color-plant-dark));}
+    }
+    li:nth-of-type(5){background: if(media(width > 1110px): var(--color-plant-brown-light); else: var(--color-plant-light));
+        &::after {background: if(media(width > 720px): var(--color-plant-brown-dark); else: var(--color-plant-dark));}
+    }
+    li:nth-of-type(6){background: if(media(width > 1210px): var(--color-plant-brown-light); else: var(--color-plant-light));
+        &::after {background: if(media(width > 720px): var(--color-plant-brown-dark); else: var(--color-plant-dark));}
+    }
+    li:nth-of-type(7){background: if(media(width > 1310px): var(--color-plant-brown-light); else: var(--color-plant-light));
+        &::after {background: if(media(width > 720px): var(--color-plant-brown-dark); else: var(--color-plant-dark));}
+    }
+    li:nth-of-type(8){background: if(media(width > 1410px): var(--color-plant-brown-light); else: var(--color-plant-light));
+        &::after {background: if(media(width > 720px): var(--color-plant-brown-dark); else: var(--color-plant-dark));}
+    }
+    li:nth-of-type(9){background: if(media(width > 1510px): var(--color-plant-brown-light); else: var(--color-plant-light));
+        &::after {background: if(media(width > 720px): var(--color-plant-brown-dark); else: var(--color-plant-dark));}
+    }
+    li:nth-of-type(10){background: if(media(width > 1610px): var(--color-plant-brown-light); else: var(--color-plant-light));
+        &::after {background: if(media(width > 720px): var(--color-plant-brown-dark); else: var(--color-plant-dark));}
+    }
+    li:nth-of-type(11){background: if(media(width > 1710px): var(--color-plant-brown-light); else: var(--color-plant-light));
+        &::after {background: if(media(width > 720px): var(--color-plant-brown-dark); else: var(--color-plant-dark));}
+    }
+    li:nth-of-type(12){background: if(media(width > 1810px): var(--color-plant-brown-light); else: var(--color-plant-light));
+        &::after {background: if(media(width > 720px): var(--color-plant-brown-dark); else: var(--color-plant-dark));}
+    }
+
+    /* Elk tweede blaadje spiegelen en positioneren */
+    li:nth-of-type(2n) {
+        scale: -1 1;
+        translate: calc(var(--plant-width) - var(--leaf-width)) 0;
+        
+    }
+}
+
 /* Hoofd */
 header {
     position: relative;
@@ -300,9 +398,8 @@ header {
                 line to 6% 50%,
                 curve to 10% 5% with 0% 34%,
                 curve to 35% 5% with 12% 0%);
-        box-shadow: 0px 35px 139px 0px rgba(230, 28, 28, 0.99) inset;
-
-        box-shadow: if(media(width > 800px): 0px 35px 139px 0px rgba(230, 28, 28, 0.99) inset;
+        /* Gegenereerd met https://cssgenerator.org/box-shadow-css-generator.html */
+        box-shadow: if(media(width > 800px): 0px 35px 139px 0px hsla(0, 80%, 51%, 0.99) inset;
                 else: 0px 35px 139px 0px var(--color-skin) inset;
             );
         transition: var(--stress-transition-duration);
@@ -335,7 +432,6 @@ header {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translateX(-50%);
         clip-path: shape(from 40% 5%,
                 hline to 60%,
                 curve to 88% 10% with 80% 60%,
@@ -347,6 +443,8 @@ header {
                 curve to 7% 10% with 0% 50%,
                 curve to 12% 10% with 10% 0%,
                 curve to 40% 5% with 20% 60%);
+        animation: mustache-bounce 12s ease-in-out infinite;
+        transition: 0.2s ease-in-out;
     }
 
     /* Beide ogen */
@@ -368,6 +466,10 @@ header {
                     else: 1;
                 );
             transition: var(--stress-transition-duration);
+            animation: wink 5s infinite;
+            transform-origin: center;
+
+            
 
             /* Pupillen */
             &::before {
@@ -392,6 +494,7 @@ header {
 
         /* Linkeroog */
         div:first-of-type {
+            
             /* Pupil */
             &::before {
                 left: 30%;
@@ -423,6 +526,24 @@ header {
     }
 }
 
+@keyframes wink {
+    0%, 90%, 100% {
+        transform: scaleY(1);
+    }
+    95% {
+        transform: scaleY(0.1);
+    }
+}
+
+@keyframes mustache-bounce {
+    0%, 96%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    98% {
+        transform: translateX(-50%) translateY(-12px);
+    }
+}
+
 /* Torso */
 main {
     margin: auto;
@@ -436,9 +557,38 @@ main {
     /* Linker arm */
     section:first-of-type {
         >div {
+
+            --arm-animation-duration: if(media(width > 1100px): 0.2s;
+                else: 0.6s;
+            );
             anchor-name: --left-shoulder-location;
             transform: rotate(var(--left-arm-rotation));
-            transition: 0.1s ease-out;
+            animation: arm-wave var(--arm-animation-duration) ease-in-out infinite;
+            transition: 0.2s ease-out;
+
+            div {
+                animation: arm-wave var(--arm-animation-duration) ease-in-out infinite;
+            }
+
+            >div {
+                animation-delay: var(--arm-floppy-delay);   
+
+                >div {
+                    animation-delay: calc(var(--arm-floppy-delay) * 2);
+
+                    >div {
+                        animation-delay: calc(var(--arm-floppy-delay) * 3);
+
+                        >div {
+                            animation-delay: calc(var(--arm-floppy-delay) * 4);
+
+                            >div {
+                                animation-delay: calc(var(--arm-floppy-delay) * 5);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -447,9 +597,38 @@ main {
         justify-self: end;
 
         >div {
+
+            --arm-animation-duration: if(media(width > 1100px): 0.2s;
+                else: 0.6s;
+            );
             anchor-name: --right-shoulder-location;
             transform: rotate(var(--right-arm-rotation));
-            transition: 0.1s ease-out;
+            animation: arm-wave var(--arm-animation-duration) ease-in-out infinite;
+            transition: 0.2s ease-out;
+
+            div {
+                animation: arm-wave var(--arm-animation-duration) ease-in-out infinite;
+            }
+
+            >div {
+                animation-delay: var(--arm-floppy-delay);   
+
+                >div {
+                    animation-delay: calc(var(--arm-floppy-delay) * 2);
+
+                    >div {
+                        animation-delay: calc(var(--arm-floppy-delay) * 3);
+
+                        >div {
+                            animation-delay: calc(var(--arm-floppy-delay) * 4);
+
+                            >div {
+                                animation-delay: calc(var(--arm-floppy-delay) * 5);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -463,6 +642,12 @@ main {
         justify-self: end;
         align-self: end;
     }
+}
+
+@keyframes arm-wave {
+    0%   { rotate: calc(var(--arm-floppiness) * -1); }
+    50%  { rotate: var(--arm-floppiness); }
+    100% { rotate: calc(var(--arm-floppiness) * -1); }
 }
 
 /* Arms and legs */
@@ -543,7 +728,7 @@ footer {
 
     /* Alle benen */
     section {
-        top: calc(var(--torso-height) / 3 - var(--arm-segment-width));
+        top: calc(var(--torso-height) / 3 - calc(var(--arm-segment-width) * 2));
         z-index: -1;
         --benen-animation-duration: if(media(width > 1400px): 0.2s;
                 else: 4s;
@@ -626,6 +811,12 @@ nav {
         }
     }
 }
+
+    /* Bronnen:
+    https://codepen.io/shooft/pres/QwWJbEX?editors=1100
+    https://frontendmasters.com/blog/how-to-get-the-width-height-of-any-element-in-only-css/
+    https://codepen.io/Melvin-Vermast/pen/wBzGgEV?editors=1100 
+    https://codepen.io/shooft/pres/QwWzzXB?editors=1100 */
 
 /* Armen */
 @property --_x-left {

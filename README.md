@@ -380,7 +380,7 @@ Tijdens het voortgangsgesprek heb ik mijn website laten zien en bijna alles was 
 
 ## Week 3
 
-### Woensdag 11 - 3 - 2026
+### Dag 5: Woensdag 11 - 3 - 2026
 Vandaag begonnen we met een uitleg over kleuren van Sanne van ongeveer een uurtje. Daarna ben ik de rest van de dag verder zelfstandig gaan werken. Ik begon met een if schrijven voor de kleur van het hoofd van de octopus. Hier had ik een box-shadow voor. De box-shadow had ik al, maar de if alleen nog niet, dit was dan dus ook wel snel klaar. Daarna ben ik verder gegaan met het maken van de typografie. Hiervoor had ik eerst in Figma een design gemaakt voor een badeend en voor een snavel. Hiervoor had ik een voorbeeld gebruikt van: https://www.shutterstock.com/shutterstock/photos/395200873/display_1500/stock-vector-rubber-duck-ducky-bath-toy-line-art-vector-icon-for-apps-and-websites-395200873.jpg. Hierdoor kon ik hem daarna makkelijker in CSS namaken. Het maken van de badeendjes ging redelijk gemakkelijk. Het enige wat me nog niet gelukt was was ze responsive maken, maar Sanne vertelde later dat het ook niet per se hoefde. Hier ben ik ongeveer 2 uur mee bezig geweest. Eerst had ik alleen een p met een ::before en een ::after voor het lichaam en had ik een span als child voor een eventuele hoed. Later heb ik nog een extra span toegevoegd voor een oog. Ik had ook nog een extra if nodig voor de benen van de octopus. Zodra het scherm dan te groot zou worden dat ook de benen droog komen te liggen, zouden ze enorm gaan spartelen. Dit was redelijk snel werkend omdat ik nu al wat meer ervaring met if() had. <br>
 Het laatste waar ik vandaag mee bezig was geweest waren de armen. Ik had een idee om radio buttons over het scherm heen te doen en dat de arm dan naar de locatie van de geklikte radio button zou gaan. Ik had dit aan Cyd voorgesteld, maar die verwees me al redelijk snel door naar Sanne. Sanne stelde voor om anchor positioning te gebruiken en had hier een snelle schets voor gemaakt en wat linkjes naar codepens gegeven. Hier kwam ik een klein eindje mee. Het lukte me om een anchor te maken, maar die werkte alleen op radio buttons die boven de schouder zaten. Alles daaronder zorgt er namelijk voor dat het anchor element een negatieve height krijgt en daardoor niet bestaat. Hier ben ik voor de rest van de dag niet uitgekomen.
 
@@ -398,7 +398,7 @@ https://www.corner-shape.com/<br>
 #### Checkout met Luna Jay
 Ik had oorspronkelijk mijn checkout met Teun, maar hij was helpen bij minorenmarkt dus was ik gekoppeld aan Luna Jay. Ik heb haar laten zien wat ik vandaag had gedaan en waar ik tegenaan liep. Het probleem was heel specifiek dus was het lastig om samen tot een oplossing te komen. Ik kan haar wel een paar ideeën geven die ze meteen had opgeschreven. 
 
-### Donderdag 12 - 3 - 2026
+### Dag 6: Donderdag 12 - 3 - 2026
 Vandaag ben ik eigenlijk alleen maar bezig geweest om de armen te regelen, ik ben eerst 2 uur bezig geweest om te fixen dat het aside element ook gevormd wordt zodra er een radio button onder de schouder wordt ingedrukt. Ik ook even getest met :hover in plaats van :checked, maar dat vond ik minder goed werken, het lijkt me leuker als je de armen los van elkaar kan positioneren. Na nog 2 uur aan proberen was met beetje hulp van Sanne ook eindelijk gelukt om de breedte en hoogte van het aside element te krijgen. Ik was vergeten om overflow: hidden toe te voegen. Wat ervoor zorgt dat het een scrollwritten animation wordt. Dus dat was een beetje balen want ben daar veel te lang mee bezig geweest om dat op te lossen. Om daarna de hypotenuse te berekenen ging vrij snel. Alleen daarna kwamen er weer problemen bij. Namelijk de hoek berekenen en die waarde gebruiken om de arm te draaien. Het probleem heeft waarschijnlijk te maken met dat de waardes niet goed gelezen kunnen worden of dat de hoek niet goed berekend wordt. Ik weet nog niet hoe ik dit ga oplossen.
 
 <img src="Assets/README_imgs/width_height_hypotenuse.png">
@@ -412,7 +412,70 @@ Deze week heb ik aan verschillende dingen gewerkt. Zo ben ik begonnen met het ve
 #### Voortgangsgesprek
 Tijdens het voortgangsgesprek had ik laten zien wat ik had, dit gaat al heel erg de goede kant op. Ik had alleen een dipje omdat het niet wilde lukken om de armen 100% goed te laten werken. Het prcoes om dit werkend te krijgen duurde langer dan veel andere onderdelen. Na het gesprek heb ik nog even met Sanne gezeten om het probleem op te lossen. Ik was er namelijk wel al achter dat het probleem waarschijnlijk ligt in de hierarchy. Bepaalde waardes die niet opgehaald konden worden omdat ze er niet bij konden. Sanne had hierbij geholpen en had ook nog even gekeken naar de atan formule. Ik had hoogte/breedte, maar het moest zijn breedte/hoogte. Een klein foutje waar weer veel moeite achter zat. Het was op school gelukt om 1 arm werkend te krijgen. Thuis ben ik bezig geweest om de andere arm ook werkend te krijgen door veel variabelen te dupliceren. En kon daarna ook andere dingen weer netter maken in de CSS.
 
- ### Weekend
+### Weekend
+In het weekend had ik nog even kort gewerkt aan mijn project. Ik had namelijk het idee om klikbare bubbels te maken in het water. Het lukte me vrij makkelijk om de bubbels te creeëren en te positioneren. Maar het lukte me niet om ze werkend te krijgen door ze te klikken. De bubbels zijn een ul waarbij elke li een bubbel is. Elke li had dan een child input met type=checkbox. Dan kon ik hem namelijk aan en uit zetten, maar ik kreeg het niet werkend om er daadwerkelijk op te klikken. Ik heb het voor toen opgegeven en kijk er later nog wel verder naar.
 
- ### 17 - 3 - 2026
- Geprobeerd inputs te fixen, probleem met z-index. Weet niet of mogelijk is om checkboxes en radio buttons tegelijk werkend te krijgen
+<img src="Assets/README_imgs/bubbels.png">
+
+## Week 4
+
+### 17 - 3 - 2026
+Aan het einde van de BT les van dinsdag had ik nog even gekeken naar mijn bubbels van CSS. Ik kwam erachter dat het allemaal te maken had met de z-index. Maar dit betekent ook dat ik of de radio buttons werkend krijg met dat de armen bewegen, of dat ik de bubbels werkend krijgt met de input checkboxes. Ik ga hier misschien morgen nog wel even naar kijken.
+
+### Dag 7: 18 - 3 - 2026
+Vandaag is mijn laatste dag dat ik aan het project zal werken, aangezien ik morgen mijn eindgesprek heb. Ik was vandaag meteen als eerste begonnen met het floppy maken van de armen. Ik had hier een animatie voor gebruikt die op elke nested div staat, maar elke div had dan een offset in delay. Op die manier kon ik een golfachtig effect creeëren voor de armen. Je ziet dan ook meteen minder dan de armen een beetje trillen vanwege het positioneren met anchors. Nils kwam met het idee om de ogen te laten knipperen door behulp van de max-height te animeren. Dit vond ik een goed idee en duurde ook niet lang om werkend te krijgen. Ik kwam daarna zelf met het idee om ook de snor een beetje te laten bewegen, maar niet op precies dezelfde delay zodat het geen regelmaat heeft. Daarna had ik nog even kort geprobeerd de bubbels klikbaar te maken door het met buttons te doen in plaats van input velden. Alleen kwam ik tegen hetzelfde probleem aan met dat of de armen kunnen bewegen of dat de bubbels geklikt kunnen worden.<br>
+Het laatste waar ik vandaag nog aan had gewerkt was de plant. Ik wilde namelijk nog een ander object in de scene hebben waar het water ook effect op heeft. Ik kwam zelf met het idee om een ol met li te gebruiken om de plant vorm te geven en had de bladeren weer gemaakt met een clip-path: shape met behulp van Figma. Maar ik had wel even de hulp van Sanne nodig om de berekening te maken voor de gradient op stam van de plant. Voor de bladeren had Sanne gezegd dat het waarschijnlijk wel zou lukken met sibling-index(). Ik heb hier een beetje over ingelezen, maar kwam niet tot een oplossing om het werkend te krijgen. Ik heb de bladeren wel werkend gekregen op een andere manier.
+
+<img src="Assets/README_imgs/bladeren_Figma.png">
+<img src="Assets/README_imgs/floppy_arms.png">
+<img src="Assets/README_imgs/plant_rotten.png">
+
+#### Bekeken websites
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/sibling-index<br>
+https://cssgradient.io/<br>
+https://thumbs.dreamstime.com/b/artboard-up-dreamstime-390810912.jpg?w=768<br>
+
+#### Checkout met Eva
+Ik had haar laten zien wat ik vandaag had gemaakt en ze vond het helemaal cool en vet van hoe alles werkte. Zelf had ze ook de silly walk. Ik heb haar nog een beetje geholpen door erop te wijzen dat het hoofd van haar poppetje nog niet de juiste z-index had. Daar ging ze nog naar kijken.
+
+#### Weekverslag
+Deze week ben ik bezig geweest met de puntjes op de i en dingen afronden. Zo is het gelukt sinds het laatste voortgangsgesprek gelukt om de armen werken te krijgen en te draaien naar het punt waar je op klikt. Thuis was het dan nog gelukt om beide armen werkend te krijgen en om bubbels toe te voegen aan het water. Het was helaas niet gelukt om de bubbels klikbaar te maken door middel van inputs of buttons, dit kwam door de z-index en het gebruik van radio buttons voor de armen. Ik heb ervoor gekozen om de armen werkend te maken en de bubbels te houden als decoratie. Voor de rest ben ik vandaag nog verder gegaan om meer animaties toe te voegen aan mijn website. Ik had noamelijk nog animatie toegevoegd aan de ogen, snor en armen. Voor de rest heb ik ook nog een plant toegevoegd aan mijn website. Dit voegt niet alleen wat kleur toe, maar gaf me ook nog een extra element waar ik het water effect op kan laten hebben. Door er een gradient op te zetten met behulp van Sanne. Ook wilde ik de bladeren nog doen, Sanne zei dat dit met sibling-index kon, maar kreeg ik niet werkend.
+
+### Eindresultaat
+Ik ben zeer tevreden over mijn eindresultaat. Ik vond het leuk hoeveel vrijheid we hadden tijdens het maken van deze opdracht. Je kon kiezen welke opdracht je wilde doen en kon daar binnen nog veel keuzes maken. Ik ben zeer tevreden over mijn product zelf. Het is zo goed als geworden zoals ik het me had voorgesteld. Mijn oorspronkelijke idee was om een soort parody te maken om de game OctoDad. Ik wilde hier een 2D variant van maken. Waarbij je dan dus de mogelikheid hebt om het poppetje te besturen. Oorspronkelijk dacht ik dit te doen met buttons, of misschien ook nog een multiplayer functie, maar voor veel van die dingen had je toch wel echt javascript nodig. Daarom ben ik al snel geswitched naar een ander idee. Het maken van het poppetje zelf ging vrij soepel, ik had door die eerste week van CSS nu ervaring met clip-path shape en heb deze dan ook veel gebruikt voor mijn opdracht voor verschillende onderdelen. Het werkte goed om dit eerst uit te werken in Figma en daarna te percentages in VS Code te zetten. <br>
+Waar ik in het begin wel tegenaan liep waren de nested divs en het overzicht in mijn HTML. Hier had Nils mij goed en veel bij geholpen. Hij gaf aan hoe ik overzicht in mijn HTML kon krijgen door gewoon andere containers te gebruiker en bijvoorbeeld een header te gebruiken voor het hoofd. Dit hielp veel en hierdoor kwam ik ook op wat creatieve ideeën voor bepaalde containers. Ook had hij al veel geholpen met het bewegen van de benen. Hier kon ik daarna nog wel een beetje mee spelen. Ook had Nils nog geholpen met het uitleggen van hoe ik het water kon regelen aan de hand van schermformaat, ik kon ik daarna zelf met hulp van AI het werkend krijgen. <br>
+Dit is ook meteen een ander onderdeel waar ik vaak tegenaan liep, wiskunde. Ik had vaak hulp nodig met de complexe stukken wiskunde. Vaak kon Sanne me daar goed bij helpen en vaak hielp het ook om het eerst op papier te zetten. Ik snap de wiskunde nu wel redelijk, maar ik denk nog niet dat ik het de volgende keer compleet zelf zou kunnen schrijven. <br>
+Een gedeelte waar ik specifiek heel trots op ben is de interactie van de armen, hier was dan ook het langste mee bezig om werkend te krijgen. Hiervoor had ik een speciale manier nodig door gebruikv an scroll driven animations om daarna mee te rekenen. Dit vond ik leuk om te maken, ook al was het moeilijk. Want ik vond de uitdaging leuk om het het gehele product te maken zonder JavaScript. Omdat ik in JavaScript het waarschijnlijk zo gemaakt heb, denk ik ook niet dat ik het een volgende keer op dezelfde manier zou doen. Maar ik vond het leuk om die techniek voor iets anders te gebruiken dan dat het oorspronkelijk bedoeld was. <br>
+
+Qua nieuwe technieken heb ik gebruik gemaakt van nesten en van if(). Nesten had ik wel al eens eerder gebruikt, maar ik heb er nog nooit zo veel profijt van gehad als met dit project. Voor als het gaat om de armen en benen van mijn poppetje. If() was wel compleet nieuw voor mij. Ik heb het voornamelijk gebruikt als een vorm van een media query. Wat handig kan zijn, ik zal dit zeker in de toekomst meer gaan gebruiken. Deze 2 onderdelen kwamen uit de lijst van nieuwe technieken, maar zelf had ik ook nog niet gewerkt met scroll-driven animations en met @property. Beide zal ik waarschijnlijk nog wel vaker gebruiken in andere projecten.
+<br><br>
+Voor de rest heb ik geprobeerd zo veel mogelijk animatie en beweging toe te voegen aan mijn website. Omdat ik ook als leerdoel voor de minor heb dat ik meer wil gaan doen met animatie. Zo heb ik animatie toegevoegd aan benen, armen, ogen, snor, hele lichaam, bubbels en badeendjes. Alles maakt de website meer vrolijk en vooral minder saai. Dit was een mooi moment om hiermee te oefenen.
+
+### Reflectie
+Ik ben tevreden met het product dat ik heb geleverd. Ik heb nieuwe technieken geleerd die ik kan gebruiken in plaats van JavaScript. Maar ik heb ook dingen geleerd over technieken zoals scroll driven animations om afstanden te berekenen, maar ik denk dat ik de volgende keer daar toch liever JavaScript voor gebruik. Ik heb technieken geleerd zoals if(), @property, scroll driven animations, ::after en ::before voor styling en heb veel proberen te oefenen met wiskunde, animaties en clip-path. Ik had gewild dat het was gelukt om de bladeren van de plant met sibling-index te laten werken, want dat had regels code gescheelt. Maar ben blij dat het alsnog is gelukt. Als ik meer tijd had gehad, had ik nog willen kijken naar de bubbels werkend krijgen, de armen ook in lengte te laten veranderen en andere kleine easter eggs en details zoals de omgeving in de scene.
+
+## Complete bronnenlijst
+https://bennettfeely.com/clippy/<br>
+https://css-tricks.com/css-blob-recipes/<br>
+https://css-shape.com/<br>
+https://css-generators.com/blob/
+https://developer.chrome.com/blog/css-shape?hl=nl<br>
+https://frontendmasters.com/blog/understanding-css-corner-shape-and-the-power-of-the-superellipse/<br>
+https://cdn.prod.website-files.com/5b44edefca321a1e2d0c2aa6/5e5f3b54311da41f4689a476_Dimensions-Guide-Digital-Video-Game-Controllers-GameCube-Controller-Dimensions.svg<br>
+https://upload.wikimedia.org/wikipedia/commons/a/a5/GameCube_controller.png<br>
+https://codepen.io/enbee81/pen/KwgVxbo?editors=1100<br>
+https://images.steamusercontent.com/ugc/468674753085237580/A99D5775804483659464E5E0615DD74216CDC168/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false<br>
+https://chrome.dev/anchor-tool/<br>
+https://bennettfeely.com/clippy/<br>
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/if<br>
+https://9elements.com/blog/speed-vs-duration-a-use-case-for-mixed-unit-division/<br>
+https://www.shutterstock.com/shutterstock/photos/395200873/display_1500/stock-vector-rubber-duck-ducky-bath-toy-line-art-vector-icon-for-apps-and-websites-395200873.jpg<br>
+https://codepen.io/shooft/pres/QwWJbEX?editors=1100<br>
+https://frontendmasters.com/blog/how-to-get-the-width-height-of-any-element-in-only-css/<br>
+https://codepen.io/Melvin-Vermast/pen/wBzGgEV?editors=1100<br>
+https://codepen.io/shooft/pres/QwWzzXB?editors=1100<br>
+https://www.corner-shape.com/<br>
+https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/sibling-index<br>
+https://cssgradient.io/<br>
+https://thumbs.dreamstime.com/b/artboard-up-dreamstime-390810912.jpg?w=768<br>
+Op verschillende momenten hulp van ChatGPT, vermeld in de README en in de code.
